@@ -1,2 +1,30 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1> Edit User </h1> <br>
+
+<%= form_for(@user) do |u|%>
+
+<label> Enter an email:</label><br>
+<%= u.email_field :email%><br>
+
+<label> Enter a username:</label><br>
+<%= u.text_field :username %><br>
+
+<label> Enter password:</label><br>
+<%= u.password_field :password %><br>
+
+<label> Enter password:</label><br>
+<%= u.password_field :password_confirmation %><br>
+
+<label> Enter first name:</label><br>
+<%= u.text_field :first_name%><br>
+
+<label> Enter last name:</label><br>
+<%= u.text_field :last_name %><br>
+
+<label> Enter an email:</label><br>
+<%= u.email_field :email%><br>
+
+<p>
+<%= u.submit %>
+</p>
+
+<% end %>
