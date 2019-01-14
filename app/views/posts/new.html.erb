@@ -12,6 +12,9 @@
 <label>Put some tags for your item</label> <br>
 <%= post.text_field :tags %> <br>
 
+<label>Upload A Picture:</label>
+<%= f.file_field :picture, direct_upload: true %><br>
+
 <p>
   <%= post.submit %>
 </p>

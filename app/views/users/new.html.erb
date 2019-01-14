@@ -20,6 +20,8 @@
 <label> Confirm Password:</label><br>
 <%= u.password_field :password_confirmation %><br>
 
+<label>Upload A Profile Picture:</label>
+<%= f.file_field :picture, direct_upload: true %><br>
 
 <p>
 <%= u.submit %>
