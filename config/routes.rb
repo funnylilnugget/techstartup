@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'pages/home'
   get 'posts/index'
   get 'posts/new'
