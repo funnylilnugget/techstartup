@@ -23,7 +23,7 @@ timeout: 5000
 
 development:
   <<: *default
-  database: db/techstartup_development
+  database: db/techstartup_development.sqlite3
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
