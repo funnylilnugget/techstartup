@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to 'users/index'
+      redirect_to '/users'
     end
   end
 
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to 'users/index'
+      redirect_to '/users'
     end
   end
 
@@ -34,6 +34,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params(:post).permit(:email, :username, :password, :first_name, :last_name, :premium, :last_name, :location_id)
+    params.require(:user).permit(:email, :username, :password_digest, :first_name, :last_name, :premium, :location_id)
   end
 end
