@@ -7,6 +7,8 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.text :tags
       t.boolean :premium
+      t.timestamps
+      t.string :redeemed
     end
   end
 end

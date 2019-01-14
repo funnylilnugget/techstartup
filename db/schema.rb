@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 2019_01_14_164250) do
     t.integer "user_id"
     t.text "tags"
     t.boolean "premium"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "redeemed"
   end
 
   create_table "users", force: :cascade do |t|
