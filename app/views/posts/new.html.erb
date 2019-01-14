@@ -1,2 +1,19 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1> Create a new post </h1><br>
+
+<%= form_for(@post) do |post| %>
+
+
+<label> Enter a title for your post </label> <br>
+<%= post.text_field :name %> <br>
+
+<label>Type out a short description</label> <br>
+<%= post.text_field :desciption %> <br>
+
+<label>Put some tags for your item</label> <br>
+<%= post.text_field :tags %> <br>
+
+<p>
+  <%= post.submit %>
+</p>
+
+<% end %>
