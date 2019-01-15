@@ -20,6 +20,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post Created"
       redirect_to @post
     else
+      puts @post
       render 'new'
     end
   end
@@ -58,4 +59,6 @@ class PostsController < ApplicationController
       post.date_completed = Date.today
     end
   end
+end
+
 end

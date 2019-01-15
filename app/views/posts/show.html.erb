@@ -1,5 +1,7 @@
-<h1>Posts#show</h1>
-<h3><%= @post.name %></h3>
-<p><%= @post.description %></p>
-<p><%= @post.tags %></p>
-<%= link_to "Remove Post", @post, method: :delete %>
+<h1>Your Posts</h1>
+
+
+<%=@post.picture.attachment.nil? ? content_tag(:div, "#{@post.name.first}", class: "default"): image_tag(@post.picture, class: "pst-img")%>
+<%=@post.name%>
+<%=@post.description%>
+<%=@post.tags%>

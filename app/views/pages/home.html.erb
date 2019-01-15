@@ -1,5 +1,34 @@
-<h1>Easy navigation</h1>
+<h1 class="center">Home</h1>
+<%posts = Post.all%>
 
+<%posts.each do |post|%>
+<div class="product-container">
+  <div class="product-card">
+    <div>
+      <a href="<%=post_path(post.id)%>">
+        <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "product-default"): image_tag(post.picture, class: "pst-img")%>
+      </a>
+    </div>
+    <div class="product-info center">
+      <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
+      <p>
+        <%=post.description%>
+      </p>
+      <p>
+        <%=post.tags%> &nbsp
+        Manhattan
+      </p>
+      <p>
+        <%=link_to 'Learn More', post_path(post.id), class: "btn btn-secondary" %>
+      </p>
+    </div>
+  </div>
+</div>
+<%end%>
+
+
+
+<br>
 <%= link_to 'Create a new user', new_user_path %>
 <br>
 <%= link_to 'Create a new post', new_post_path %>

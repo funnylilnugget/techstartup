@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:danger] = 'Invalid email/password combination'
+      puts "this #{user.errors.messages}"
       render 'new'
     end
   end
@@ -17,8 +18,6 @@ class SessionsController < ApplicationController
   def destroy
 
     session[:user_id] = nil
-
-
     redirect_to root_path
   end
 
