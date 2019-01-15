@@ -1,4 +1,6 @@
 <h1><%= @user.first_name %> <%= @user.last_name%></h1>
 
 <%= @user.posts.name %>
-<%= @user.posts.description %>
+
+
+<%= link_to "Finally, a logout button", logout_path, method: :delete %>
