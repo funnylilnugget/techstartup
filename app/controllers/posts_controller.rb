@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   end
 
   def set_timer(post)
-    if post.status.changes == {"status" => ["in-progess", "completed"]}
+    if post.changes == {"status" => ["in-progess", "completed"]}
       post.date_completed = Date.today
   end
 end
