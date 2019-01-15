@@ -1,9 +1,10 @@
-<div class="top-nav">
+<div class="topnav-container">
 
-<li class="listitem-topnav"><%= link_to "Home", root_path %></li>
-<li class="listitem-topnav"><%= link_to "Cat", root_path %></li>
-<li class="listitem-topnav"><%= link_to image_tag("/assets/cc.png", :class =>"cc-image"), root_path %></li>
-<li class="listitem-topnav"><input type="search" placeholder="Search"></input></li>
-<li class="listitem-topnav"> <%= link_to 'Logout', logout_path, method: :delete %></li>
+
+<div class="grid-item"><%= link_to "Home", root_path %> </div>
+<div class="grid-item"><%= link_to "Cat", root_path %></div>
+<div class="grid-item"><%= link_to image_tag("/assets/cc.png", :class =>"cc-image"), root_path %></div>
+<div class="grid-item"><input type="search" placeholder="Search"></input></div>
+<div class="grid-item"> <%= link_to 'Logout', logout_path, method: :delete %></div>
 
 </div>

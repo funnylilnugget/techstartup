@@ -25,3 +25,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore DB when uploading to GitHub.
+/db/techstartup_development.sqlite3
