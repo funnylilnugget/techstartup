@@ -29,11 +29,15 @@
 body {
   margin: 0;
   background-color: #F8EEE7;
+  font-family: 'Muli', sans-serif;
 }
 
 .center {
   text-align: center;
   justify-content: center;
+}
+.hidden {
+  display: none;
 }
 
 .main {
@@ -112,7 +116,6 @@ input[type=text], input[type=email], input[type=password], select{
   border: 2px solid #49274a;
   color: #ffffff;
 }
-
 /***************** TOP-NAV ****************/
  .topnav-container {
    display: grid;

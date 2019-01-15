@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.status = 'open'
     if @post.valid?
       @post.save
       flash[:notice] = "Post Created"
@@ -31,6 +32,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if
       @post.update(post_params)
+      set_timer(@post)
+      flash[:notice] = "Post Updated"
       redirect_to '/posts'
     end
   end
@@ -39,6 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
+      flash[:notice] = "Post Deleted"
       redirect_to '/posts'
     end
   end
@@ -47,5 +51,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:name, :description, :category_id, :user_id, :tags, :premium, :picture)
+  end
+
+  def set_timer(post)
+    if post.status.changes == {"status" => ["in-progess", "completed"]}
+      post.date_completed = Date.today
   end
 end
