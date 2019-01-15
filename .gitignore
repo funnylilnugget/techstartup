@@ -28,5 +28,4 @@
 
 
 # Ignore DB when uploading to GitHub.
-
 /db/techstartup_development.sqlite3
