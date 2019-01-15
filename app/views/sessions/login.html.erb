@@ -10,13 +10,13 @@
     <h1 class="center">Sign In</h1>
 
     <%= form_for(:session, url: login_path) do |f| %>
-      <p>
+      <p class="center">
         <%= f.email_field :email, placeholder: "Email" %>
       </p>
-      <p>
+      <p class="center">
         <%= f.password_field :password, placeholder: "Password" %>
       </p>
-      <p>
+      <p class="center">
         <%= f.submit 'Login', class: "btn btn-primary" %>
       </p>
     <% end %>
