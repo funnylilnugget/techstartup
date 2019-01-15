@@ -116,18 +116,19 @@ input[type=text], input[type=email], input[type=password], select{
 }
 
 .alert-success {
-  background-color: #00ce00;
+  background-color: #94618E;
 }
 
 .alert-notice {
-  background-color: #FFFF33;
+  background-color: #94618E;
 }
 
 .alert-error {
-  background-color: rgb(235,70,45);
+  background-color: #94618E;
 }
 
-.animate-up{#FF0000
+.animate-up{
+
   position: relative;
   animation-name: animateup;
   animation-duration: 1s;
