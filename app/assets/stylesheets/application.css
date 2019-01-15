@@ -16,11 +16,15 @@
 body {
   margin: 0;
   background-color: #F8EEE7;
+  font-family: 'Muli', sans-serif;
 }
 
 .center {
   text-align: center;
   justify-content: center;
+}
+.hidden {
+  display: none;
 }
 
 .main {
@@ -98,4 +102,61 @@ input[type=text], input[type=email], input[type=password], select{
   background-color: #49274a;
   border: 2px solid #49274a;
   color: #ffffff;
+}
+
+
+/******************** Flash Notices *******************/
+
+.alert {
+  color: white;
+  font-size: 1em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.alert-success {
+  background-color: #00ce00;
+}
+
+.alert-notice {
+  background-color: #FFFF33;
+}
+
+.alert-error {
+  background-color: rgb(235,70,45);
+}
+
+.animate-up{#FF0000
+  position: relative;
+  animation-name: animateup;
+  animation-duration: 1s;
+}
+
+.animate-down{
+  position: relative;
+  animation-name: animatedown;
+  animation-duration: 1s;
+}
+
+@keyframes animateup {
+  from {
+    top:-300px;
+    opacity:1
+  }
+  to {
+    top:0;
+    opacity:1
+  }
+}
+
+@keyframes animatedown {
+  from {
+    top:300px;
+    opacity:1
+  }
+  to {
+    top:0;
+    opacity:1
+  }
 }

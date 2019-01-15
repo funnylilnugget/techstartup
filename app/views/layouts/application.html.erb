@@ -5,11 +5,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="alerts" class="center animate-up">
+      <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
+    <script type="text/javascript">
+    window.addEventListener('load', function(){
+      console.log("works");
+      setTimeout(function(){
+        var alert = document.querySelector('#alerts');
+        alert.classList.add('hidden');
+      },2000)
+    });
+  </script>
+
   </body>
 </html>
