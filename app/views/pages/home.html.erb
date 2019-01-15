@@ -1,5 +1,24 @@
-<h1>Easy navigation</h1>
+<h1>Home</h1>
+<%posts = Post.all%>
 
+<%posts.each do |post|%>
+<div class="product-container">
+  <div class="product-card">
+    <div>
+      <%=post.picture.attachment.nil? ? content_tag(:div, "Image", class: "product-default"): image_tag(post.picture, class: "pst-img")%>
+    </div>
+    <div>
+      <%=post.name%>
+      <%=post.description%>
+      <%=post.tags%>
+    </div>
+  </div>
+</div>
+<%end%>
+
+
+
+<br>
 <%= link_to 'Create a new user', new_user_path %>
 <br>
 <%= link_to 'Create a new post', new_post_path %>

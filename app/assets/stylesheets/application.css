@@ -57,6 +57,32 @@ body {
   border-bottom-right-radius: 20px;
 }
 
+/***************** Product Card Dashboard ****************/
+.product-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.product-card {
+  display: grid;
+  grid-template: 300px / 40% 60%;
+  width: 100%;
+  margin: 0;
+  padding: 2%;
+}
+
+.product-card div:nth-child(1) {
+  height: 300px;
+}
+
+.product-default {
+  background-image: url("https://www.elite-electronics.com.au/images/yamaha/imagenotavailable.png"), linear-gradient(rgba(10,10,10,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+
 /***************** Forms ****************/
 input[type=text], input[type=email], input[type=password], select{
   width: 75%;

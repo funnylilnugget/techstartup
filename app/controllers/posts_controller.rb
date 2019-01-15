@@ -19,6 +19,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post Created"
       redirect_to @post
     else
+      puts @post
       render 'new'
     end
   end
