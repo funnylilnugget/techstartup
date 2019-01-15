@@ -120,7 +120,7 @@ body {
 .product-default {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-image: url("https://www.amcadgraphics.com/assets/images/default/no-image-available.png");
+  background-image: url('/assets/no-image-available.png');
   background-blend-mode: overlay;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -219,22 +219,16 @@ input[type=search] {
 	font-size: 100%;
 }
 
-<<<<<<< HEAD
-.animate-up{
-  position: relative;
-  animation-name: animateup;
-  animation-duration: 1s;
-=======
 input[type=search] {
-	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	background: #ededed url('/assets/search-icon.png') no-repeat 9px center;
 	border: solid 1px #ccc;
 	padding: 9px 10px 9px 32px;
 	width: 0;
   height: 10px;
 	border-radius: 10em;
 	transition: all .5s;
->>>>>>> 5f94616a855422596c44e72212ac8bf8c5e8d323
 }
+
 input[type=search]:focus {
 	width: 130px;
 	background-color: #fff;
