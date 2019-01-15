@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 0;
+  background-color: #F8EEE7;
+}
+
+.center {
+  text-align: center;
+  justify-content: center;
+}
+
+.main {
+  padding-top: 2%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.account {
+  width: 100%;
+  display: grid;
+  grid-template: 750px / 50% 50%;
+}
+
+.account div:nth-child(1) {
+  padding: 5%;
+  color: #49274a;
+  background-color: #f4decb;
+  border-top: 2px solid #94618e;
+  border-left: 2px solid #94618e;
+  border-bottom: 2px solid #94618e;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.account div:nth-child(2) {
+  padding: 5%;
+  color: #94618e;
+  background-color: #faeee9;
+  border-top: 2px solid #94618e;
+  border-right: 2px solid #94618e;
+  border-bottom: 2px solid #94618e;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/***************** Forms ****************/
+input[type=text], input[type=email], input[type=password], select{
+  width: 75%;
+  background-color: #e3e3e3;
+  font-size: .87em;
+  padding: 10px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/***************** Buttons ****************/
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 10px 80px;
+  font-size: 1.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  border: 2px solid #94618e;
+  color: #94618e;
+  background-color: none;
+}
+.btn-primary:hover {
+  border: 2px solid #94618e;
+  background-color: #94618e;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  border: 2px solid #49274a;
+  color: #49274a;
+  background-color: none;
+}
+
+.btn-secondary:hover {
+  background-color: #49274a;
+  border: 2px solid #49274a;
+  color: #ffffff;
+}
