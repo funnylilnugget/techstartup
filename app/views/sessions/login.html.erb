@@ -1,8 +1,25 @@
-<%= form_for(:session, url: login_path) do |f| %>
+<div class="account">
+  <div>
+    <h1 class="center">Community Chest</h1>
+    <h2 class="center">Something Something</h2>
+    <p class="center">
+      <%=link_to 'Sign Up', new_user_path, class: "btn btn-secondary"%>
+    </p>
+  </div>
+  <div>
+    <h1 class="center">Sign In</h1>
 
-    <%= f.text_field (:email) %>
-    <%= f.label :email, 'Email' %>
-    <%= f.password_field :password %>
-    <%= f.label :password, 'Password' %>
-    <%= f.submit ('Login') %>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <p>
+        <%= f.email_field :email, placeholder: "Email" %>
+      </p>
+      <p>
+        <%= f.password_field :password, placeholder: "Password" %>
+      </p>
+      <p>
+        <%= f.submit 'Login', class: "btn btn-primary" %>
+      </p>
     <% end %>
+  </div>
+
+</div>
