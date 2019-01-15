@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       log_in @user
+      flash[:notice] = "Account Created"
       redirect_to @user
     else
       p @user.errors.messages
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:notice] = "Usser Information Updated"
       redirect_to '/users'
     end
   end
