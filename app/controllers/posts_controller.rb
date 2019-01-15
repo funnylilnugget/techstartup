@@ -59,3 +59,5 @@ class PostsController < ApplicationController
       post.date_completed = Date.today
   end
 end
+
+end
