@@ -116,15 +116,57 @@ input[type=text], input[type=email], input[type=password], select{
 /***************** TOP-NAV ****************/
  .topnav-container {
    display: grid;
-   width: 100%;
+   width: 50%;
    height: 100px;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    margin: 0 auto;
-   background-color: #94618E;
+   background-color: #F4DECB;
  }
 
  .grid-item {
    text-align: center;
    vertical-align: middle;
    line-height: 100px;
+   font-size: 1.1em;
+
+}
+
+.grid-item a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.grid-item:hover a {
+  color: white;
+}
+
+.grid-item:hover:not(.grid-ignore) {
+  background-color: #94618E;
+  border: 1px solid #F8EEE7;
+  text-decoration: underline;
+}
+
+input {
+	outline: none;
+}
+input[type=search] {
+  box-sizing: content-box;
+  font-family: 'Poppins', sans-serif;
+	font-size: 100%;
+}
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 0;
+  height: 10px;
+	border-radius: 10em;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: rgb(94, 43, 85);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
 }
