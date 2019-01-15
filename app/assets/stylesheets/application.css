@@ -13,6 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+ /* COLOR PALLETE
+
+---GRAPE--- #94618E
+---EGGPLANT--- #49274A
+---SAND---     #F4DECB
+---SHELL--- #F8EEE7
+ */
+
+
+
 body {
   margin: 0;
   background-color: #F8EEE7;
@@ -61,6 +74,58 @@ body {
   border-bottom-right-radius: 20px;
 }
 
+/***************** Product Card Dashboard ****************/
+.product-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 2%;
+}
+
+.product-card {
+  display: grid;
+  grid-template: 300px / 40% 60%;
+  width: 80%;
+  margin: 0;
+  border: 1px solid #f5decb;
+  border-radius: 20px;
+  background-color: #f5decb;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .3);
+  justify-content: center;
+}
+
+.product-card div:nth-child(1) {
+  height: 300px;
+}
+
+.product-card div:nth-child(1) img{
+  height: 300px;
+}
+
+.product-card div:nth-child(2){
+  padding-top: 5%;
+}
+.heading {
+  text-decoration: none;
+  font-size: 2em;
+  color: black;
+}
+
+.product-info {
+  display: grid;
+  grid-template: 25% 25% 20% 30% / 100%;
+}
+
+.product-default {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-image: url("https://www.amcadgraphics.com/assets/images/default/no-image-available.png");
+  background-blend-mode: overlay;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 /***************** Forms ****************/
 input[type=text], input[type=email], input[type=password], select{
   width: 75%;
@@ -103,61 +168,76 @@ input[type=text], input[type=email], input[type=password], select{
   border: 2px solid #49274a;
   color: #ffffff;
 }
+/***************** TOP-NAV ****************/
+ .topnav-container {
+   display: grid;
+   width: 100%;
+   height: 100px;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   margin: 0 auto;
+   background-color: #F4DECB;
+ }
+
+ .grid-item {
+   text-align: center;
+   vertical-align: middle;
+   line-height: 100px;
+   font-size: 1.3em;
+}
+ .cc-image {
+   vertical-align: middle;
+   width: 80px;
+   height: auto;
+ }
+ .cc-image:hover {
+   animation-iteration-count: infinite;
+ }
 
 
-/******************** Flash Notices *******************/
 
-.alert {
+.grid-item a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.grid-item:hover a {
   color: white;
-  font-size: 1em;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 100%;
 }
 
-.alert-success {
+.grid-item:hover:not(.grid-ignore) {
   background-color: #94618E;
+  border: 1px solid #F8EEE7;
+  font-weight: bold;
 }
 
-.alert-notice {
-  background-color: #94618E;
+input {
+	outline: none;
+}
+input[type=search] {
+  box-sizing: content-box;
+  font-family: 'Mal', sans-serif;
+	font-size: 100%;
 }
 
-.alert-error {
-  background-color: #94618E;
-}
-
+<<<<<<< HEAD
 .animate-up{
-
   position: relative;
   animation-name: animateup;
   animation-duration: 1s;
+=======
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 0;
+  height: 10px;
+	border-radius: 10em;
+	transition: all .5s;
+>>>>>>> 5f94616a855422596c44e72212ac8bf8c5e8d323
 }
-
-.animate-down{
-  position: relative;
-  animation-name: animatedown;
-  animation-duration: 1s;
-}
-
-@keyframes animateup {
-  from {
-    top:-300px;
-    opacity:1
-  }
-  to {
-    top:0;
-    opacity:1
-  }
-}
-
-@keyframes animatedown {
-  from {
-    top:300px;
-    opacity:1
-  }
-  to {
-    top:0;
-    opacity:1
-  }
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: rgb(94, 43, 85);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
 }

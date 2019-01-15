@@ -1,2 +1,7 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1>Your Posts</h1>
+
+
+<%=@post.picture.attachment.nil? ? content_tag(:div, "#{@post.name.first}", class: "default"): image_tag(@post.picture, class: "pst-img")%>
+<%=@post.name%>
+<%=@post.description%>
+<%=@post.tags%>
