@@ -14,11 +14,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @user = User.find(session[:user_id])
+    @user.posts << @post
     @post.status = 'open'
     if @post.valid?
       @post.save
       flash[:notice] = "Post Created"
-      redirect_to root_path
+      redirect_to @user
     else
       puts @post
       render 'new'
@@ -54,7 +56,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:name, :description, :category_id, :user_id, :tags, :premium, :picture)
+    params.require(:post).permit(:name, :description, :category_id, :tags, :premium, :picture)
   end
 
   def set_timer(post)

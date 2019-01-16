@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "User Information Updated"
-      redirect_to '/users'
+      redirect_to @user
     end
   end
 
