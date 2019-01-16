@@ -54,6 +54,14 @@ end
     end
   end
 
+#   def destroy
+#   @post = Post.find(params[:id])
+#   respond_to do |format|
+#     format.js
+#   end
+#   @post.destroy
+# end
+
   private
 
   def user_params
