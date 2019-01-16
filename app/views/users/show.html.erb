@@ -2,7 +2,7 @@
   <div>
     <%=@user.picture.attachment.nil? ? content_tag(:div, "", class: "user-default"): image_tag(@user.picture)%>
   </div>
-  <div>
+  <div class="center">
     <h1><%= @user.full_name%></h1>
     <p>Username: <strong><%= @user.username.capitalize%></strong></p>
     <p>My Location: <strong><%= @user.location%></strong></p>
@@ -21,11 +21,12 @@
   <%posts.each do |post|%>
   <div class="post">
     <div>
-      <%=post.picture.attachment.nil? ? content_tag(:div, " ", class: "product-default"): image_tag(post.picture, class: "posts-img")%>
+      <a href="<%=post_path(post.id)%>"><%=post.picture.attachment.nil? ? content_tag(:div, " ", class: "product-default"): image_tag(post.picture, class: "posts-img")%></a>
     </div>
-    <div>
-      <h1><%=post.name%></h1>
+    <div class="center">
+      <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a>
       <p><%=post.description%></p>
+      <p><%=post.tags%></p>
     </div>
   </div>
   <%end%>

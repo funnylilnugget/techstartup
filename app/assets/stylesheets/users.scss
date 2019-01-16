@@ -30,9 +30,11 @@
 
 .posts-img {
   width: 100%;
+  height: 100%;
 }
 
 .post {
   display: grid;
-  grid-template: 50% 50% / auto;
+  grid-template: 70% 30% / auto;
+  border: 1px dashed grey;
 }
