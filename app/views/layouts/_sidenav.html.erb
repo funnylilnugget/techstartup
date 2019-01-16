@@ -8,9 +8,12 @@
     <span></span>
     <span></span>
 
-
+    <%user = User.find_by(params[:id])%>
     <ul id="menu">
-      <%= link_to 'View Profile & Posts', users_path %><br>
+      <%=user.picture.attachment.nil? ? content_tag(:div, "", class: "user-default"): image_tag(user.picture)%><br>
+      <br>
+      <%= link_to 'View Profile & Posts', user_path(session[:user_id]) %><br>
+      <br>
       <%= link_to 'Create a new post', new_post_path %>
     </ul>
   </div>
