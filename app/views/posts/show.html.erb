@@ -1,7 +1,7 @@
 <h1>Your Posts</h1>
 
 
-<%=@post.picture.attachment.nil? ? content_tag(:div, "#{@post.name.first}", class: "default"): image_tag(@post.picture, class: "pst-img")%>
+<%=@post.picture.attachment.nil? ? content_tag(:div, "#{@post.name.first}", class: "default"): image_tag(@post.picture)%>
 <%=@post.name%>
 <%=@post.description%>
 <%=@post.tags%>

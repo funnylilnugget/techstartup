@@ -4,6 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+/db/techstartup_development.sqlite3
 # Ignore bundler config.
 /.bundle
 
@@ -25,4 +26,3 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-/db/techstartup_development.sqlite3

@@ -1,6 +1,34 @@
-<h1><%= @user.first_name %> <%= @user.last_name%></h1>
+<div class="user-profile">
+  <div>
+    <%=@user.picture.attachment.nil? ? content_tag(:div, "", class: "user-default"): image_tag(@user.picture)%>
+  </div>
+  <div class="center">
+    <h1><%= @user.full_name%></h1>
+    <p>Username: <strong><%= @user.username.capitalize%></strong></p>
+    <p>My Location: <strong><%= @user.location%></strong></p>
+    <p>Email: <strong><%= @user.email%></strong></p>
+    <p>Created Posts: <strong><a href="<%=post_path(@user.id)%>"><%= @user.posts.count%></a></strong></p>
+    <%=link_to 'Edit Profile', edit_user_path%> &nbsp
+    <%=link_to 'Delete Account', edit_user_path%>
+  </div>
+</div>
 
-<%= @user.posts.name %>
+<div id="posts" class="user-posts">
+<h1 class="center">Created Posts</h1>
 
-
-<%= link_to "Finally, a logout button", logout_path, method: :delete %>
+<%posts = Post.all%>
+<div class="posts-grid">
+  <%posts.each do |post|%>
+  <div class="post">
+    <div>
+      <a href="<%=post_path(post.id)%>"><%=post.picture.attachment.nil? ? content_tag(:div, " ", class: "product-default"): image_tag(post.picture, class: "posts-img")%></a>
+    </div>
+    <div class="center">
+      <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a>
+      <p><%=post.description%></p>
+      <p><%=post.tags%></p>
+    </div>
+  </div>
+  <%end%>
+</div>
+</div>
