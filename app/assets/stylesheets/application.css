@@ -262,7 +262,7 @@ a:hover {
 
 #menuToggle {
   display: block;
-  position: relative;
+  position: fixed;
   top: 50px;
   left: 50px;
   z-index: 1;
@@ -321,7 +321,8 @@ transform-origin: 0% 0%;
 
 #menu {
   position: absolute;
-  width: 300px;
+  width: 200px;
+  height: 100vh;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
@@ -330,6 +331,7 @@ transform-origin: 0% 0%;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  font-size: 1.1em;
 }
 
 #menu li {
@@ -363,7 +365,7 @@ transform-origin: 0% 0%;
   background-color: #C19434;
 }
 
- .animate-up{#FF0000
+ .animate-up {
   position: relative;
   animation-name: animateup;
   animation-duration: 2s;

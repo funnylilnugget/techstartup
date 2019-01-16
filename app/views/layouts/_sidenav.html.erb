@@ -8,9 +8,13 @@
     <span></span>
     <span></span>
 
-
-    <ul id="menu">
-      <%= link_to 'View Profile & Posts', users_path %><br>
+    <%user = User.find(session[:user_id])%>
+    <ul class="center" id="menu">
+      <%= image_tag(user.picture) %><br>
+      <h3>Hello, <%= user.first_name %></h3><br>
+      <br>
+      <%= link_to 'View Profile & Posts', user_path(session[:user_id]) %><br>
+      <br>
       <%= link_to 'Create a new post', new_post_path %>
     </ul>
   </div>
