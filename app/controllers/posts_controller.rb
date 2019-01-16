@@ -40,13 +40,16 @@ class PostsController < ApplicationController
   end
 
 
-  def destroy
-    @post = Post.find(params[:id])
-    if @post.destroy
-      flash[:notice] = "Post Deleted"
-      redirect_to '/posts'
-    end
+    def destroy
+  @post = Post.find(params[:id])
+  if @post.destroy
+    flash[:notice] = "Post Deleted"
+  respond_to do |format|
+    format.js
   end
+end
+  @post.destroy
+end
 
   private
 

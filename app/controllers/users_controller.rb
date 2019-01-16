@@ -44,6 +44,14 @@ class UsersController < ApplicationController
     end
   end
 
+#   def destroy
+#   @post = Post.find(params[:id])
+#   respond_to do |format|
+#     format.js
+#   end
+#   @post.destroy
+# end
+
   private
   def user_params
     params.require(:user).permit(:email, :username, :password, :password_confirmation, :first_name, :last_name, :location_id, :picture)
