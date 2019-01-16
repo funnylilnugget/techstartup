@@ -22,11 +22,11 @@
   <%posts.each do |post|%>
   <div class="post" id="post-<%=post.id%>">
     <div>
-      <a class="post-default" href="<%=post_path(post.id)%>">
+      <a href="<%=post_path(post.id)%>">
       <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "post-default"): image_tag(post.picture, class: "posts-img")%>
     </a>
     </div>
-    <div class="center">
+    <div class="description center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a>
       <p><%=post.description%></p>
       <p><%=post.tags%></p>
