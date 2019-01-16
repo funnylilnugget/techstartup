@@ -42,11 +42,8 @@ class PostsController < ApplicationController
 
     def destroy
   @post = Post.find(params[:id])
-  if @post.destroy
-    flash[:notice] = "Post Deleted"
   respond_to do |format|
     format.js
-  end
 end
   @post.destroy
 end
