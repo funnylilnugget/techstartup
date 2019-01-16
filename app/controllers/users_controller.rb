@@ -28,13 +28,23 @@ class UsersController < ApplicationController
   end
 
   def show
+  if current_user
     @user = User.find(params[:id])
+  else
+    redirect_to root_path
   end
+end
 
 
   def edit
     @user = User.find(params[:id])
+
+    if current_user.id != @user.id
+      flash[:notice] = "this be not your account, yo"
+      redirect_to root_path
+    end
   end
+
 
   def update
     @user = User.find(params[:id])
@@ -45,7 +55,9 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :username, :password, :password_confirmation, :first_name, :last_name, :location_id, :picture)
   end
+  
 end

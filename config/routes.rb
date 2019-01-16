@@ -5,11 +5,7 @@ root "pages#home"
 resources :pages
 resources :posts
 resources :users
-
-resources :categories, only: [index, :show] do
-          resources :posts, only: [:new, :create, :show]
-end
-
+resources :sessions, only: [:new, :create, :destroy]
 
 get '/login', to: 'sessions#login'
 post '/login', to: 'sessions#create'
