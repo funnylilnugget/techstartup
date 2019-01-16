@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_164250) do
     t.boolean "premium"
     t.string "status"
     t.date "date_completed"
+    t.string "condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

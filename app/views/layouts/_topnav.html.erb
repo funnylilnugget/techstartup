@@ -1,5 +1,5 @@
 <style media="screen">
-  input[type="submit"] {
+  #search-btn {
     display: none;
   }
 </style>
@@ -14,7 +14,7 @@
   <div class="grid-item grid-ignore">
     <form class="" action="/" method="get">
       <input type="search" name="search" placeholder="Search">
-    </input><input type="submit" name="submit" value="Search">
+    </input><input id="search-btn" type="submit" name="submit" value="Search">
     </form>
 </div>
   <div class="grid-item"> <%= link_to 'Logout', logout_path, method: :delete %></div>
