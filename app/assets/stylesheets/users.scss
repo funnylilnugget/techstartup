@@ -33,6 +33,7 @@
 
 .posts-grid {
   display: inline-grid;
+  width: 100%;
   grid-template: auto / repeat(3, 30%);
   grid-gap: 5%;
 }
