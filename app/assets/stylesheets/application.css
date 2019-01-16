@@ -356,7 +356,7 @@ transform-origin: 0% 0%;
   background-color: #C19434;
 }
 
- .animate-up{#FF0000
+ .animate-up{
   position: relative;
   animation-name: animateup;
   animation-duration: 2s;
