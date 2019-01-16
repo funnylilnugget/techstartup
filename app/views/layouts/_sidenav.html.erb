@@ -9,12 +9,12 @@
     <span></span>
 
     <%user = User.find(session[:user_id])%>
-    <ul id="menu">
+    <ul class="center" id="menu">
       <%= image_tag(user.picture, class: "userimg") if user.picture.attached?%>
-     <h3>Hello, <%= user.first_name %></h3> 
+     <h3>Hello, <%= user.first_name %></h3>
     <br> <br>
 
-     
+
 
       <%= link_to 'View Profile & Posts', user_path(session[:user_id]) %><br>
       <br>
