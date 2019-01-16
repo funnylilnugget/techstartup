@@ -9,6 +9,7 @@
     <p>Email: <strong><%= @user.email%></strong></p>
     <p>Created Posts: <strong><a href="<%=post_path(@user.id)%>"><%= @user.posts.count%></a></strong></p>
     <%=link_to 'Edit Profile', edit_user_path%> &nbsp
+    <%=link_to 'Create New Post', new_post_path%> &nbsp
     <%=link_to 'Delete Account', edit_user_path%>
   </div>
 </div>
@@ -21,7 +22,9 @@
   <%posts.each do |post|%>
   <div class="post">
     <div>
-      <a href="<%=post_path(post.id)%>"><%=post.picture.attachment.nil? ? content_tag(:div, " ", class: "product-default"): image_tag(post.picture, class: "posts-img")%></a>
+      <a href="<%=post_path(post.id)%>">
+      <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "post-default"): image_tag(post.picture, class: "posts-img")%>
+    </a>
     </div>
     <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a>
