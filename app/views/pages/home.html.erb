@@ -1,8 +1,7 @@
-<%= link_to 'Create a new post', new_post_path %>
-<h1 class="center">Home</h1>
+<h1 class="center">Latest Post</h1>
 <%posts = Post.all%>
 
-<%posts.each do |post|%>
+<%posts.reverse.each do |post|%>
 <div class="product-container">
   <div class="product-card">
     <div>
