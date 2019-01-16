@@ -1,0 +1,18 @@
+<% if logged_in? %>
+<nav role='navigation'>
+  <div id="menuToggle">
+
+    <input type="checkbox" />
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+
+    <ul id="menu">
+      <%= link_to 'View Profile & Posts', users_path %><br>
+      <%= link_to 'Create a new post', new_post_path %>
+    </ul>
+  </div>
+</nav>
+<% end %>
