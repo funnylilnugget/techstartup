@@ -10,7 +10,7 @@
 
     <%user = User.find_by(params[:id])%>
     <ul id="menu">
-      <%=user.picture.attachment.nil? ? content_tag(:div, "", class: "user-default"): image_tag(user.picture)%><br>
+      <%= image_tag(@user.picture) if @user.picture.attached?%>
       <br>
       <%= link_to 'View Profile & Posts', user_path(session[:user_id]) %><br>
       <br>
