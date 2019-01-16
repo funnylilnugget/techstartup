@@ -100,7 +100,10 @@ body {
 }
 
 .product-card div:nth-child(1) img{
-  height: 300px;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 100%;
 }
 
 .product-card div:nth-child(2){
