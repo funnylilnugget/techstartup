@@ -10,7 +10,7 @@
 
 
     <ul id="menu">
-      <%= link_to 'View Profile & Posts', users_path %><br>
+      <%= link_to 'View Profile & Posts', user_path(session[:user_id]) %><br>
       <%= link_to 'Create a new post', new_post_path %>
     </ul>
   </div>
