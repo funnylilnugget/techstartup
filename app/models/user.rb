@@ -7,6 +7,6 @@ belongs_to :location, optional: true
 has_one_attached :picture
 
 def full_name
-  "#{first_name} #{last_name}"
+  "#{first_name.capitalize} #{last_name.capitalize}"
 end
 end

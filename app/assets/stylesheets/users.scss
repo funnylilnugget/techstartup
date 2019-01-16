@@ -1,3 +1,38 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-profile {
+  width: 100%;
+  display: inline-grid;
+  grid-template: 350px / 40% 60%;
+  padding: 2%;
+  grid-gap: 2%;
+}
+
+.user-profile div:nth-child(1) img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user-posts {
+  margin: 0;
+  width: 100%;
+}
+
+.posts-grid {
+  width: 100%;
+  display: inline-grid;
+  grid-template: auto / repeat(3, 32%);
+  grid-gap: 2%;
+}
+
+.posts-img {
+  width: 100%;
+}
+
+.post {
+  display: grid;
+  grid-template: 50% 50% / auto;
+}

@@ -32,7 +32,6 @@ class UsersController < ApplicationController
   end
 
 
-
   def edit
     @user = User.find(params[:id])
   end
@@ -40,12 +39,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Usser Information Updated"
+      flash[:notice] = "User Information Updated"
       redirect_to '/users'
     end
   end
-
-
 
   private
   def user_params
