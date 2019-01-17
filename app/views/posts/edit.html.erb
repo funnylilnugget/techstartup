@@ -10,8 +10,16 @@
 <%= post.text_field :description %> <br>
 
 <label>Put some tags for your item: </label> <br>
-<%= post.text_field :tags %> <br>
-<%= post.file_field :picture, direct_upload: true %>
+<%= post.text_field :tags %> <br><br>
+
+<label>Select a category</label><br>
+<%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %><br>
+
+<label>Edit picture: </label> <br>
+<%= post.file_field :picture, direct_upload: true %><br><br>
+
+<label>Status of item: </label> <br>
+<%= post.select :status, ["Open", "In Progress", "Closed"]%><br>
 <p>
   <%= post.submit %>
 </p>
