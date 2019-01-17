@@ -116,11 +116,6 @@ body {
   color: black;
 }
 
-.product-info {
-  display: grid;
-  grid-template: 25% 25% 20% 30% / 100%;
-}
-
 .product-default {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;

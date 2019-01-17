@@ -14,10 +14,12 @@
         <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "product-default"): image_tag(post.picture, class: "pst-img")%>
       </a>
     </div>
-    <div class="product-info center">
+    <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
       <p>
-        <%=post.description%>
+        By: <a href="<%=posts_path%>"><%=post.name%></a> <br>
+        <%=post.description.truncate(100)%> &nbsp
+        <%= link_to 'Read More', post_path(post.id)%>
       </p>
       <p>
         <% tag = post.tags.sub('#',"") %>
