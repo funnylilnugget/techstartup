@@ -18,10 +18,10 @@
 
  /* COLOR PALLETE
 
----GRAPE--- #94618E
----EGGPLANT--- #49274A
----SAND---     #F4DECB
----SHELL--- #F8EEE7
+ #252839
+ #677077
+ #b5b5b7
+ #f2b632
  */
 
 
@@ -180,6 +180,7 @@ input[type=text], input[type=email], input[type=password], select{
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
    margin: 0 auto;
    background-color: #F4DECB;
+   border-bottom: 1px solid rgb(217, 217, 217);
  }
 
  .grid-item {
@@ -187,6 +188,10 @@ input[type=text], input[type=email], input[type=password], select{
    vertical-align: middle;
    line-height: 100px;
    font-size: 1.3em;
+   text-transform: uppercase;
+   display: inline-block;
+   position: relative;
+
 }
  .cc-image {
    vertical-align: middle;
@@ -208,19 +213,38 @@ input[type=text], input[type=email], input[type=password], select{
   color: white;
 }
 
-.grid-item:hover:not(.grid-ignore) {
+.grid-item:not(.grid-ignore)::before {
+  transition: 300ms;
+  height: 3px;
+  content: "";
+  position: absolute;
+  background-color: #f2b632;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.grid-item:hover::before {
+  width: 40%;
+}
+
+
+
+/* .grid-item:hover:not(.grid-ignore) {
   background-color: #94618E;
   border: 1px solid #F8EEE7;
   font-weight: bold;
-}
+} */
 
 input {
 	outline: none;
 }
 input[type=search] {
   box-sizing: content-box;
-  font-family: 'Mal', sans-serif;
-	font-size: 100%;
+  font-family: 'Poppins', sans-serif;
+	font-size: 15px;
 }
 
 
