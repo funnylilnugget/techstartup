@@ -1,0 +1,18 @@
+<h1 class="category-hero-text">All Categories</h1>
+<div class="category-container">
+
+
+<table>
+  <% @categories.in_groups_of(4, false) do |row_tasks| %>
+
+<tr class="category-rows">
+<% for task in row_tasks %>
+<td class="category-names">
+  <a href="<%=posts_path(task.id)%>" class="category-names-atag">
+  <%= task.name%> </a>
+</td>
+<% end %>
+</tr>
+<% end %>
+</table>
+</div>
