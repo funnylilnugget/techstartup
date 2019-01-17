@@ -17,18 +17,10 @@
 
 
  /* COLOR PALLETE
-<<<<<<< HEAD
-
  #252839
  #677077
  #b5b5b7
  #f2b632
-=======
-  #252839
-  #677077
-  #b5b5b7
-  #f2b632
->>>>>>> 9d0165aba6fb9d43388fb2b5509d090fb740022c
  */
 
 
@@ -182,13 +174,10 @@ input[type=text], input[type=email], input[type=password], select{
    height: 100px;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
    margin: 0 auto;
-<<<<<<< HEAD
    background-color: #F4DECB;
    border-bottom: 1px solid rgb(217, 217, 217);
-=======
-
    background-color: #252839;
->>>>>>> 9d0165aba6fb9d43388fb2b5509d090fb740022c
+
  }
 
  .grid-item {
@@ -210,8 +199,6 @@ input[type=text], input[type=email], input[type=password], select{
  .cc-image:hover {
    animation-iteration-count: infinite;
  }
-
-
 
 .grid-item a {
   text-decoration: none;
