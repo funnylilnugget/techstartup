@@ -30,6 +30,10 @@ body {
   background-color: #b5b5b7;
   font-family: 'Muli', sans-serif;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 
 .center {
   text-align: center;
@@ -249,14 +253,14 @@ input[type=search]:focus {
 /************ SIDE NAV *************/
 
 
-a {
+#menuToggle a {
   text-decoration: none;
-  color: #F1F1EF;
+  color: #252839;
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: tomato;
+#menuToggle a:hover {
+  color: #f2b632;
 }
 
 #menuToggle {
