@@ -5,7 +5,7 @@
   <div class="center">
     <h1><%= @user.full_name%></h1>
     <p>Username: <strong><%= @user.username.capitalize%></strong></p>
-    <p>My Location: <strong><%= @user.location%></strong></p>
+    <p>My Location: <strong><%= @user.location.name%></strong></p>
     <p>Email: <strong><%= @user.email%></strong></p>
     <p>Created Posts: <strong><%= @user.posts.count%></strong></p>
     <%=link_to 'Edit Profile', edit_user_path%> &nbsp
