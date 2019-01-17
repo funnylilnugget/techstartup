@@ -2,6 +2,7 @@
 <%posts = Post.all%>
 
 
+
 <%posts.reverse.each do |post|%>
 
 <% if params["search"] == nil %>
@@ -19,7 +20,8 @@
         <%=post.description%>
       </p>
       <p>
-        <%=post.tags%> &nbsp
+        <% tag = post.tags.sub('#',"") %>
+        <a href="/?search=%23<%= tag %>&submit=Search"><%=post.tags%></a> &nbsp
         Manhattan
       </p>
       <p>
