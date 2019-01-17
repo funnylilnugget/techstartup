@@ -14,10 +14,16 @@
         <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "product-default"): image_tag(post.picture, class: "pst-img")%>
       </a>
     </div>
-    <div class="product-info center">
+    <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
       <p>
-        <%=post.description%>
+        <strong>By:</strong> <a href="<%=posts_path(post.user.posts)%>"><%=post.user.username%></a> &nbsp
+        <strong>Created:</strong> <%=post.created_at.strftime('%b %d, %C%y')%> &nbsp
+        <strong>Status:</strong> <%=post.status.capitalize%>
+      </p>
+      <p>
+        <%=post.description.truncate(100)%> <br>
+        <%= link_to 'Read More', post_path(post.id)%>
       </p>
       <p>
         <% tags = post.tags.split(" ").each do |tag| %>
@@ -26,10 +32,10 @@
         <% end %>
 
         &nbsp
-        Manhattan
+        <strong>Location:</strong> <%=post.user.location.name%>
       </p>
       <p>
-        <%=link_to 'Learn More', post_path(post.id), class: "btn btn-secondary" %>
+        <%=link_to 'Contact Seller', post_path(post.id), class: "btn btn-primary" %>
       </p>
     </div>
   </div>

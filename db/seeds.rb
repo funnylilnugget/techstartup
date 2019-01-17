@@ -41,7 +41,7 @@ Category.create(name: 'Video Games', premium: false)
 Category.create(name: 'Wanted', premium: false)
 Category.create(name: 'Wheels & Tires', premium: false)
 
-Location.create(name: 'Manhatten')
+Location.create(name: 'Manhattan')
 Location.create(name: 'Brooklyn')
 Location.create(name: 'Queens')
 Location.create(name: 'The Bronx')

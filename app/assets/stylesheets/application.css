@@ -17,18 +17,25 @@
 
 
  /* COLOR PALLETE
+<<<<<<< HEAD
 
  #252839
  #677077
  #b5b5b7
  #f2b632
+=======
+  #252839
+  #677077
+  #b5b5b7
+  #f2b632
+>>>>>>> 9d0165aba6fb9d43388fb2b5509d090fb740022c
  */
 
 
 
 body {
   margin: 0;
-  background-color: #F8EEE7;
+  background-color: #b5b5b7;
   font-family: 'Muli', sans-serif;
 }
 
@@ -89,9 +96,10 @@ body {
   grid-template: 300px / 40% 60%;
   width: 80%;
   margin: 0;
-  border: 1px solid #f5decb;
+  color: #F1F1EF;
+  border: 1px solid #252839;
   border-radius: 20px;
-  background-color: #f5decb;
+  background-color: #252839;
   box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .3);
   justify-content: center;
 }
@@ -113,12 +121,7 @@ body {
 .heading {
   text-decoration: none;
   font-size: 2em;
-  color: black;
-}
-
-.product-info {
-  display: grid;
-  grid-template: 25% 25% 20% 30% / 100%;
+  color: #F1F1EF;
 }
 
 .product-default {
@@ -151,13 +154,13 @@ input[type=text], input[type=email], input[type=password], select{
 }
 
 .btn-primary {
-  border: 2px solid #94618e;
-  color: #94618e;
+  border: 2px solid #f2b632;
+  color: #f2b632;
   background-color: none;
 }
 .btn-primary:hover {
-  border: 2px solid #94618e;
-  background-color: #94618e;
+  border: 2px solid #f2b632;
+  background-color: #f2b632;
   color: #ffffff;
 }
 
@@ -179,14 +182,20 @@ input[type=text], input[type=email], input[type=password], select{
    height: 100px;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
    margin: 0 auto;
+<<<<<<< HEAD
    background-color: #F4DECB;
    border-bottom: 1px solid rgb(217, 217, 217);
+=======
+
+   background-color: #252839;
+>>>>>>> 9d0165aba6fb9d43388fb2b5509d090fb740022c
  }
 
  .grid-item {
    text-align: center;
    vertical-align: middle;
    line-height: 100px;
+   color: #F1F1EF;
    font-size: 1.3em;
    text-transform: uppercase;
    display: inline-block;
@@ -207,10 +216,11 @@ input[type=text], input[type=email], input[type=password], select{
 .grid-item a {
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
+  color: #F1F1EF;
 }
 
 .grid-item:hover a {
-  color: white;
+  color: #F1F1EF;
 }
 
 .grid-item:not(.grid-ignore)::before {
@@ -277,7 +287,7 @@ input[type=search]:focus {
 
 a {
   text-decoration: none;
-  color: #232323;
+  color: #F1F1EF;
   transition: color 0.3s ease;
 }
 
