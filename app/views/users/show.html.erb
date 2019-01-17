@@ -7,7 +7,7 @@
     <p>Username: <strong><%= @user.username.capitalize%></strong></p>
     <p>My Location: <strong><%= @user.location%></strong></p>
     <p>Email: <strong><%= @user.email%></strong></p>
-    <p>Created Posts: <strong><a href="<%=posts_path(@user.id)%>"><%= @user.posts.count%></a></strong></p>
+    <p>Created Posts: <strong><%= @user.posts.count%></strong></p>
     <%=link_to 'Edit Profile', edit_user_path%> &nbsp
     <%=link_to 'Create New Post', new_post_path%> &nbsp
     <%=link_to 'Delete Account', edit_user_path%>
