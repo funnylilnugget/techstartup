@@ -28,8 +28,9 @@
     </div>
     <div class="description center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a>
-      <p><%=post.description%></p>
+      <p><%=post.description.truncate(100)%></p>
       <p><%=post.tags%></p>
+      <%= link_to "Edit", edit_post_path(post)%> &nbsp &nbsp
       <%= link_to "Delete", post_path(post), remote: true, method: :delete, data: { confirm: 'Are you sure you want to delete this?'} %>
     </div>
   </div>

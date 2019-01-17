@@ -1,12 +1,13 @@
 <div class="post-grid">
   <div>
-    <%=@post.picture.attachment.nil? ? content_tag(:div, "#{@post.name.first}", class: "default"): image_tag(@post.picture)%>
+    <%=@post.picture.attachment.nil? ? content_tag(:div, "", class: "img-default"): image_tag(@post.picture)%>
   </div>
   <div>
     <h1 class="center"><%=@post.name.upcase%></h1>
     <span><strong>By: </strong><%=@post.user.username.capitalize%></span> &nbsp
     <span><strong>Created: </strong><%=@post.created_at.strftime('%b %d, %C%y')%></span>
     <p><strong>Status: </strong><%=@post.status.capitalize%></p>
+    <p><strong>Category: </strong><%=@post.category.name%></p>
     <p><strong>Description: </strong><%=@post.description%></p>
     <p><strong>Location: </strong><%=@post.user.location.name.capitalize%></p>
     <% tags = @post.tags.split(" ").each do |tag| %>
@@ -14,10 +15,27 @@
     <a href="/?search=%23<%= t %>&submit=Search"><%=tag%></a>
     <% end %>
   </div>
-</div>
+</div> <br>
 
+<h1 class="center">Related Posts</h1> <br>
 <div class="related-posts">
-  <div>
-
+  <%posts = Post.where(category: @post.category_id)%>
+  <div class="posts-grid">
+    <%posts.reverse.each do |post|%>
+    <div class="post" id="post-<%=post.id%>">
+      <div>
+        <a href="<%=post_path(post.id)%>">
+        <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "post-default"): image_tag(post.picture, class: "posts-img")%>
+      </a>
+      </div>
+      <div class="description center">
+        <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a>
+        <p><%=post.description.truncate(100)%> </p>
+        <p>
+        <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary"%>
+        </p>
+      </div>
+    </div>
+    <%end%>
   </div>
 </div>
