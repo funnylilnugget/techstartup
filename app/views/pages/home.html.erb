@@ -22,8 +22,12 @@
         <%= link_to 'Read More', post_path(post.id)%>
       </p>
       <p>
-        <% tag = post.tags.sub('#',"") %>
-        <a href="/?search=%23<%= tag %>&submit=Search"><%=post.tags%></a> &nbsp
+        <% tags = post.tags.split(" ").each do |tag| %>
+        <% t = tag.sub('#','') %>
+        <a href="/?search=%23<%= t %>&submit=Search"><%=tag%></a>
+        <% end %>
+
+        &nbsp
         Manhattan
       </p>
       <p>
@@ -32,7 +36,7 @@
     </div>
   </div>
 </div>
-<% elsif params["search"].downcase == post.name.downcase || params["search"].downcase == post.tags %>
+<% elsif params["search"].downcase == post.name.downcase || post.tags.include?(params["search"].downcase) %>
 <div class="product-container">
   <div class="product-card">
     <div>
