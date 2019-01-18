@@ -1,6 +1,5 @@
-#app/views/chats/show.html.erb
-<div>
-  <h5>Chat with <%= @other_user.username %></h5>
+<div class="msg-box">
+  <h2 class="center"><%=@other_user.username.capitalize%></h2>
   <% if @chat.messages.any? %>
     <div id="messages">
       <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
