@@ -35,12 +35,26 @@ a {
   color: #f2b632;
 }
 
+.half-toppadding {
+  padding-top: 50%;
+}
+
+.qtr-toppadding {
+  padding-top: 25%;
+}
+
 .center {
   text-align: center;
   justify-content: center;
 }
+
 .hidden {
   display: none;
+}
+
+.userimg {
+  width: 100%;
+  border-radius: 50%;
 }
 
 .main {
@@ -58,22 +72,22 @@ a {
 
 .account div:nth-child(1) {
   padding: 5%;
-  color: #49274a;
-  background-color: #f4decb;
-  border-top: 2px solid #94618e;
-  border-left: 2px solid #94618e;
-  border-bottom: 2px solid #94618e;
+  color: #F1F1EF;
+  background-color: #393c48;
+  border-top: 2px solid #f2b632;
+  border-left: 2px solid #f2b632;
+  border-bottom: 2px solid #f2b632;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
 .account div:nth-child(2) {
   padding: 5%;
-  color: #94618e;
-  background-color: #faeee9;
-  border-top: 2px solid #94618e;
-  border-right: 2px solid #94618e;
-  border-bottom: 2px solid #94618e;
+  color: #F1F1EF;
+  background-color: #252839;
+  border-top: 2px solid #f2b632;
+  border-right: 2px solid #f2b632;
+  border-bottom: 2px solid #f2b632;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -85,6 +99,7 @@ a {
   height: 100%;
   justify-content: center;
   padding: 2%;
+  padding-left: 12.5%;
 }
 
 .product-card {
@@ -153,24 +168,24 @@ input[type=text], input[type=email], input[type=password], select{
 .btn-primary {
   border: 2px solid #f2b632;
   color: #f2b632;
-  background-color: none;
+  background: none;
 }
 .btn-primary:hover {
   border: 2px solid #f2b632;
   background-color: #f2b632;
-  color: #ffffff;
+  color: #F1F1EF;
 }
 
 .btn-secondary {
-  border: 2px solid #49274a;
-  color: #49274a;
+  border: 2px solid #FB8122;
+  color: #FB8122;
   background-color: none;
 }
 
 .btn-secondary:hover {
-  background-color: #49274a;
-  border: 2px solid #49274a;
-  color: #ffffff;
+  border: 2px solid #FB8122;
+  background-color: #FB8122;
+  color: #F1F1EF;
 }
 /***************** TOP-NAV ****************/
  .topnav-container {
@@ -424,9 +439,4 @@ transform-origin: 0% 0%;
     top:0;
     opacity:1
   }
-}
-
-.userimg {
-  width: 100%;
-  border-radius: 50%;
 }

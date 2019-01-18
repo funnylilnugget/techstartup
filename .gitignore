@@ -5,9 +5,9 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 /db/techstartup_development.sqlite3
+/.DS_Store
 # Ignore bundler config.
 /.bundle
-
 
 
 # Ignore all logfiles and tempfiles.

@@ -1,8 +1,6 @@
 <h1 class="center">Latest Post</h1>
 <%posts = Post.all%>
 
-
-
 <%posts.reverse.each do |post|%>
 
 <% if params["search"] == nil %>
@@ -17,7 +15,7 @@
     <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
       <p>
-        <strong>By:</strong> <a href="<%=posts_path(post.user.posts)%>"><%=post.user.username.capitalize%></a> &nbsp
+        <strong>By:</strong> <a href="/users/<%= post.user.id %>"><%=post.user.username.capitalize%></a> &nbsp
         <strong>Created:</strong> <%=post.created_at.strftime('%b %d, %C%y')%> &nbsp
         <strong>Status:</strong> <%=post.status.capitalize%>
       </p>
@@ -51,7 +49,7 @@
     <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
       <p>
-        <strong>By:</strong> <a href="<%=posts_path(post.user.posts)%>"><%=post.user.username.capitalize%></a> &nbsp
+        <strong>By:</strong> <a href="/?search=%23<%= post.user.username %>&submit=Search"><%=post.user.username.capitalize%></a> &nbsp
         <strong>Created:</strong> <%=post.created_at.strftime('%b %d, %C%y')%> &nbsp
         <strong>Status:</strong> <%=post.status.capitalize%>
       </p>

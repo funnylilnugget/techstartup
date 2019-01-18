@@ -1,2 +1,24 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="related-posts">
+  <div class="posts-grid">
+    <%@posts.reverse.each do |post|%>
+
+    <div class="post" id="post-<%=post.id%>">
+      <div>
+        <a href="<%=post_path(post.id)%>">
+        <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "post-default"): image_tag(post.picture, class: "posts-img")%>
+      </a>
+      </div>
+      <div class="description center">
+        <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a> <br>
+        <a href="/users/<%= post.user.id %>"><strong><%=post.user.username.capitalize %></strong></a> <br>
+        <p><%=post.description.truncate(100)%></p>
+        <p><%=post.user.location.name%></p>
+        <p><%=post.tags%></p>
+        <p>
+        <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary"%>
+        </p>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>

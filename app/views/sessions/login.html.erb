@@ -1,13 +1,13 @@
 <div class="account">
-  <div>
-    <h1 class="center">Community Chest</h1>
+  <div class="animate-up">
+    <h1 class="half-toppadding center">Community Chest</h1>
     <h2 class="center">Something Something</h2>
     <p class="center">
       <%=link_to 'Sign Up', new_user_path, class: "btn btn-secondary"%>
     </p>
   </div>
-  <div>
-    <h1 class="center">Sign In</h1>
+  <div class="animate-down">
+    <h1 class="qtr-toppadding center">Sign In</h1>
 
     <%= form_for(:session, url: login_path) do |f| %>
       <p class="center">
