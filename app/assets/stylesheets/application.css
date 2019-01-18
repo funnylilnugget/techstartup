@@ -224,36 +224,37 @@ input[type=text], input[type=email], input[type=password], select{
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   color: #F1F1EF;
+  position: relative;
 }
 
-.grid-item:hover a {
+.grid-item:not(.grid-ignore):hover a {
   color: #F1F1EF;
+  border-bottom: 4px solid #f2b632;
+  display: inline;
+  padding-bottom: 3px;
 }
 
-.grid-item:not(.grid-ignore)::before {
+/*
+ .grid-item:not(.grid-ignore)::before {
   transition: 300ms;
   height: 3px;
   content: "";
   position: absolute;
   background-color: #f2b632;
 }
-
 .nav-link-ltr::before {
   width: 0%;
   bottom: 10px;
 }
-
 .grid-item:hover::before {
   width: 40%;
-}
-
-
-
-/* .grid-item:hover:not(.grid-ignore) {
-  background-color: #94618E;
-  border: 1px solid #F8EEE7;
-  font-weight: bold;
 } */
+
+ /* .grid-item:hover {
+  text-decoration: underline;
+  color:white;
+} */
+
 
 input {
 	outline: none;
