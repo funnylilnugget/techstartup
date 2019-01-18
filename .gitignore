@@ -7,9 +7,7 @@
 /db/techstartup_development.sqlite3
 # Ignore bundler config.
 /.bundle
-/Gemfile
-/Gemfile.lock
-/.DS_Store
+
 
 
 # Ignore all logfiles and tempfiles.
