@@ -4,7 +4,7 @@
   </div>
   <div>
     <h1 class="center"><%=@post.name.upcase%></h1>
-    <p><strong>By: </strong><%=@post.user.username.capitalize%></p>
+    <strong>By: </strong><a href="/users/<%= @post.user.id %>"><%=@post.user.username.capitalize%></a>
     <p><strong>Created: </strong><%=@post.created_at.strftime('%b %d, %C%y')%></p>
     <p><strong>Status: </strong><%=@post.status.capitalize%></p>
     <p><strong>Category: </strong> <a href="#"><%=@post.category.name%></a></p>
