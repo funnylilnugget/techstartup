@@ -1,8 +1,6 @@
 <h1 class="center">Latest Post</h1>
 <%posts = Post.all%>
 
-
-
 <%posts.reverse.each do |post|%>
 
 <% if params["search"] == nil %>
@@ -17,7 +15,7 @@
     <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
       <p>
-        <strong>By:</strong> <a href="<%=posts_path(post.user.posts)%>"><%=post.user.username%></a> &nbsp
+        <strong>By:</strong> <a href="/users/<%= post.user.id %>"><%=post.user.username.capitalize%></a> &nbsp
         <strong>Created:</strong> <%=post.created_at.strftime('%b %d, %C%y')%> &nbsp
         <strong>Status:</strong> <%=post.status.capitalize%>
       </p>
@@ -48,17 +46,28 @@
         <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "product-default"): image_tag(post.picture, class: "pst-img")%>
       </a>
     </div>
-    <div class="product-info center">
+    <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
       <p>
-        <%=post.description%>
+        <strong>By:</strong> <a href="/?search=%23<%= post.user.username %>&submit=Search"><%=post.user.username.capitalize%></a> &nbsp
+        <strong>Created:</strong> <%=post.created_at.strftime('%b %d, %C%y')%> &nbsp
+        <strong>Status:</strong> <%=post.status.capitalize%>
       </p>
       <p>
-        <%=post.tags%> &nbsp
-        Manhattan
+        <%=post.description.truncate(100)%> <br>
+        <%= link_to 'Read More', post_path(post.id)%>
       </p>
       <p>
-        <%=link_to 'Learn More', post_path(post.id), class: "btn btn-secondary" %>
+        <% tags = post.tags.split(" ").each do |tag| %>
+        <% t = tag.sub('#','') %>
+        <a href="/?search=%23<%= t %>&submit=Search"><%=tag%></a>
+        <% end %>
+
+        &nbsp
+        <strong>Location:</strong> <%=post.user.location.name%>
+      </p>
+      <p>
+        <%=link_to 'Contact Seller', post_path(post.id), class: "btn btn-primary" %>
       </p>
     </div>
   </div>

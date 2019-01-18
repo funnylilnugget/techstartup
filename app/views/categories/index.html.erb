@@ -8,7 +8,7 @@
 <tr class="category-rows">
 <% for task in row_tasks %>
 <td class="category-names">
-  <a href="<%=posts_path(task.id)%>" class="category-names-atag">
+  <a href="categories/<%=task.id%>" class="category-names-atag">
   <%= task.name%> </a>
 </td>
 <% end %>

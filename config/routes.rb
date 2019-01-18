@@ -5,7 +5,7 @@ root "pages#home"
 resources :pages
 resources :posts
 resources :users
-resources :categories, only: [:index]
+resources :categories, only: [:index, :show]
 resources :sessions, only: [:new, :create, :destroy]
 
 
