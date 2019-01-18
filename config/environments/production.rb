@@ -101,6 +101,10 @@ Rails.application.configure do
   #   arguments: '-i'
   # }
 
+  Raven.configure do |config|
+    config.dsn = ENV['SENTRY_DSN']
+  end
+
   if ENV['RACK_ENV']
     ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
   else
@@ -122,8 +126,3 @@ Rails.application.configure do
   enable_starttls_auto: true  }
 
   end
-
-
-Raven.configure do |config|
-  config.dsn = ENV['SENTRY_DSN']
-end
