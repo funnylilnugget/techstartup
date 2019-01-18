@@ -33,12 +33,14 @@
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
       <p>
-        <%=link_to 'Contact Seller', post_path(post.id), class: "btn btn-primary" %>
+      
+       <%= link_to("Contact", user_chats_path(current_user, :other_user => post.user.id, :post => post.id), method: :post) %>
       </p>
     </div>
   </div>
 </div>
 <% elsif params["search"].downcase == post.name.downcase || post.tags.include?(params["search"].downcase) %>
+
 <div class="product-container">
   <div class="product-card">
     <div>
@@ -67,7 +69,7 @@
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
       <p>
-        <%=link_to 'Contact Seller', post_path(post.id), class: "btn btn-primary" %>
+        <%=link_to('Contact Selllllers', "/users/#{session[:user_id]}/chats#{session[:user_id]}?other_user=#{post.user.id}", class: "btn btn-primary") %>
       </p>
     </div>
   </div>
