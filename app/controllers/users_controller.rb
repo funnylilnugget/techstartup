@@ -30,10 +30,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # if current_user.id != @user.id
-    #   flash[:notice] = "Get lost kid"
-    #   redirect_to root_path
-    # end
+    if session[:user_id] != @user.id
+      flash[:notice] = "Get lost kid"
+      redirect_to root_path
+    end
   end
 
 

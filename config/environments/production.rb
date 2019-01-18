@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.web_socket_server_url = "wss://community-chest-v2.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://community-chest-v2.herokuapp.com', 'http://community-chest-v2.herokuapp.com']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
