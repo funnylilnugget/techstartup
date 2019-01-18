@@ -21,18 +21,14 @@ local:
     # credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
     # bucket: ccnycimages
 #
-#   google:
-#   service: GCS
-#   project: tech-startup
-#   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
-#   bucket: ccnycimages
+  google:
+  service: GCS
+  project: tech-startup
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
+  bucket: ccnycimages
 #
 #
-# google_dev:
-#   service: GCS
-#   project: tech-startup
-#   credentials: <%= Rails.root.join("config/secret/tech-startup.json") %>
-#   bucket: ccnycimages
+
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
