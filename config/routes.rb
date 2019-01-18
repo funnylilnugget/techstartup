@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
+  # Serve websocket cable requests in-process
+mount ActionCable.server => '/cable'
 
 root "pages#home"
 
 resources :pages
 resources :posts
-resources :users
+resources :users, only:[:index, :edit, :update]
 resources :categories, only: [:index, :show]
 resources :sessions, only: [:new, :create, :destroy]
 
+resources :users, only:[:new, :create, :show] do
+   resources :chats, only: [:index, :show, :create]
+  end
 
-
-
+resources :messages, only:[:create]
 
 get '/login', to: 'sessions#login'
 post '/login', to: 'sessions#create'
