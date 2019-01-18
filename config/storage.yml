@@ -24,8 +24,9 @@ local:
   google:
   service: GCS
   project: tech-startup
-  credentials: <%= Rails.application.credentials.gcs_todo_pic.to_json %>
-  bucket: ccnyimage
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
+  bucket: ccnyimages
+
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
