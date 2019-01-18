@@ -12,6 +12,9 @@
 <label>Put some tags for your item</label> <br>
 <%= post.text_field :tags %> <br>
 
+<label>Select a category</label><br>
+<%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %><br>
+
 <label>Upload A Picture:</label>
 <%= post.file_field :picture, direct_upload: true %><br>
 

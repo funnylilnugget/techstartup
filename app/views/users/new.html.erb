@@ -1,30 +1,38 @@
 <div class="account">
-  <div class="center">
+  <div class="animate-up center">
     <h1> Sign Up</h1>
 
     <%= form_for(@user) do |u|%>
+
     <p>
       <%= u.text_field :first_name, placeholder: "First Name" %>
     </p>
+
     <p>
       <%= u.text_field :last_name, placeholder: "Last Name" %>
     </p>
+
     <p>
       <%= u.email_field :email, placeholder: "Email"%>
     </p>
+
     <p>
       <%= u.text_field :username, placeholder: "User Name" %>
     </p>
+
     <p>
       <%= u.password_field :password, placeholder: "Password" %>
     </p>
+
     <p>
       <%= u.password_field :password_confirmation, placeholder: "Confirm Password"%>
     </p>
+
     <p>
       <label> Select your location:</label><br>
-      <%= u.select :location, ["", "Brooklyn", "Queens", "Manhattan", "Bronx", "Staten Island"]%><br>
+      <%= u.collection_select :location_id, Location.order(:name), :id, :name, { include_blank: true } %><br>
     </p>
+
     <p>
       <label>Upload A Profile Picture:</label>
       <%= u.file_field :picture, direct_upload: true %>
@@ -32,13 +40,19 @@
     <p>
       <%= u.submit 'Sign Up', class: "btn btn-primary" %>
     </p>
+
     <% end %>
+
   </div>
-  <div>
-    <h1 class="center">Community Chest</h1>
+  <div class="animate-down">
+
+    <h1 class="half-toppadding center">Community Chest</h1>
+
     <h2 class="center">Something Something</h2>
+
     <p class="center">
       <%=link_to 'Sign In', login_path, class: "btn btn-secondary"%>
     </p>
+
   </div>
 </div>

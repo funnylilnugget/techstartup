@@ -14,11 +14,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @user = User.find(session[:user_id])
+    @user.posts << @post
     @post.status = 'open'
     if @post.valid?
       @post.save
       flash[:notice] = "Post Created"
-      redirect_to @post
+      redirect_to @user
     else
       puts @post
       render 'new'
@@ -35,23 +37,26 @@ class PostsController < ApplicationController
       @post.update(post_params)
       set_timer(@post)
       flash[:notice] = "Post Updated"
-      redirect_to '/posts'
+      redirect_to @post
+    else
+      render 'new'
+      puts "#{@post.errors.messages}"
     end
   end
 
 
-  def destroy
-    @post = Post.find(params[:id])
-    if @post.destroy
-      flash[:notice] = "Post Deleted"
-      redirect_to '/posts'
-    end
-  end
+    def destroy
+  @post = Post.find(params[:id])
+  respond_to do |format|
+    format.js
+end
+  @post.destroy
+end
 
   private
 
   def post_params
-    params.require(:post).permit(:name, :description, :category_id, :user_id, :tags, :premium, :picture)
+    params.require(:post).permit(:name, :description, :category_id, :tags, :premium, :picture)
   end
 
   def set_timer(post)
