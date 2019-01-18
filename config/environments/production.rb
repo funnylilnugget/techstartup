@@ -101,9 +101,6 @@ Rails.application.configure do
   #   arguments: '-i'
   # }
 
-  Raven.configure do |config|
-    config.dsn = ENV['SENTRY_DSN']
-  end
 
   if ENV['RACK_ENV']
     ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
