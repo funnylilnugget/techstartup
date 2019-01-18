@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
  before_action :reset_session
-end
+
 
 
 
