@@ -1,31 +1,29 @@
 <h1 class="category-hero-text">All Categories</h1>
 <div class="category-container">
 
-
-<table>
-  <% @categories.in_groups_of(4, false) do |row_tasks| %>
-
-<tr class="category-rows">
-<% for task in row_tasks %>
-<td class="category-names">
-  <a href="categories/<%=task.id%>" class="category-names-atag">
-  <%= task.name%> </a>
-</td>
-<% end %>
-</tr>
-<% end %>
-</table>
 </div>
 
-
-
-
-<div class="container-for-category">
-
-<div class="category-column-one"></div>
-
-
-
-
-
+<div class="grid-category-container">
+  <% @categories = Category.all %>
+  <% @categories.each do |c| %>
+  <div class="grid-category-columns">
+    <a href="categories/<%= c.id %>" class="category-names-atag">
+    <%= c.name %>
+  </a>
 </div>
+<% end %>
+</div>
+
+<!-- OPTION 2 FOR CATEGORY DISPLAY -->
+<!-- <div class="grid-category-container">
+  <% @categories.in_groups_of(1, false) do |row_tasks| %>
+    <div class="category-columns">
+      <% for task in row_tasks %>
+      <a href="categories/<%=task.id%>" class="category-names-atag">
+      <div class="category-names">
+          <%= task.name%> </a>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+</div> -->

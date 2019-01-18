@@ -10,16 +10,14 @@
 
 .category-hero-text {
   padding-top: 5%;
+  // padding-bottom: 100px;
   text-align: center;
-}
-
-.category-rows {
+  border-bottom: 1px solid black;
 }
 
 /* top right bottom left*/
 .category-names {
   padding: 5%;
-
 }
 
 
@@ -27,10 +25,19 @@
   font-size: 1.3em;
   font-family: 'Poppins', sans-serif;
   color: black;
+  padding: 30px;
 }
 
 .category-names-atag:hover {
   font-family: 'Poppins', sans-serif;
   color: white;
-  border-bottom: 2px solid white;
+  text-decoration: underline;
+}
+
+.grid-category-container {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-gap: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
