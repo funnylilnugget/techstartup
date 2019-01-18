@@ -8,8 +8,8 @@
 
   <div class="grid-item grid-ignore"></div>
   <div class="grid-item grid-ignore"></div>
-  <div class="grid-item"><%= link_to "Home", root_path %> </div>
-  <div class="grid-item"><%= link_to "Cat", root_path %></div>
+  <div class="grid-item nav-link-ltr"><%= link_to "Home", root_path %> </div>
+  <div class="grid-item nav-link-ltr"><%= link_to "Categories", categories_path %></div>
   <div class="grid-item grid-ignore"><%= link_to image_tag("/assets/tc2.png", :class =>"cc-image animated swing"), root_path %></div>
   <div class="grid-item grid-ignore">
     <form class="" action="/" method="get">
@@ -17,7 +17,7 @@
     </input><input id="search-btn" type="submit" name="submit" value="Search">
     </form>
 </div>
-  <div class="grid-item"> <%= link_to 'Logout', logout_path, method: :delete %></div>
+  <div class="grid-item nav-link-ltr"> <%= link_to 'Logout', logout_path, method: :delete %></div>
   <div class="grid-item grid-ignore"></div>
   <div class="grid-item grid-ignore"></div>
 

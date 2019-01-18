@@ -99,6 +99,12 @@ Rails.application.configure do
   #   arguments: '-i'
   # }
 
+  if ENV['RACK_ENV']
+    ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+  else
+    set :database, {adapter: "sqlite3", database: "article.sqlite3"}
+  end
+
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'communitychestnyc@gmail.com'}

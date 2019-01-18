@@ -1,0 +1,39 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.category-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.category-hero-text {
+  padding-top: 5%;
+  text-align: center;
+}
+
+.category-rows {
+
+}
+
+/* top right bottom left*/
+.category-names {
+  padding: 5%;
+
+}
+
+
+.category-names-atag {
+  font-size: 1.3em;
+  font-family: 'Poppins', sans-serif;
+  color: black;
+}
+
+.category-names-atag:hover {
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  border-bottom: 2px solid white;
+}
