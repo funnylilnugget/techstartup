@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       @post.update(post_params)
       set_timer(@post)
       flash[:notice] = "Post Updated"
-      redirect_to user_path(session[:user_id])
+      redirect_to @post
     else
       render 'new'
       puts "#{@post.errors.messages}"

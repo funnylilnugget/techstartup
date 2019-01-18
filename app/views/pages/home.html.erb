@@ -1,8 +1,6 @@
 <h1 class="center">Latest Post</h1>
 <%posts = Post.all%>
 
-
-
 <%posts.reverse.each do |post|%>
 
 <% if params["search"] == nil %>

@@ -7,7 +7,7 @@
     <strong>By: </strong><a href="/users/<%= @post.user.id %>"><%=@post.user.username.capitalize%></a>
     <p><strong>Created: </strong><%=@post.created_at.strftime('%b %d, %C%y')%></p>
     <p><strong>Status: </strong><%=@post.status.capitalize%></p>
-    <p><strong>Category: </strong> <a href="#"><%=@post.category.name%></a></p>
+    <p><strong>Category: </strong> <a href="<%=category_path(@post.category_id)%>"><%=@post.category.name%></a></p>
     <p><strong>Description: </strong><%=@post.description%></p>
     <p><strong>Location: </strong><%=@post.user.location.name.capitalize%></p>
     <% tags = @post.tags.split(" ").each do |tag| %>
