@@ -33,7 +33,7 @@
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
       <p>
-      
+
        <%= link_to("Contact", user_chats_path(current_user, :other_user => post.user.id, :post => post.id), method: :post) %>
       </p>
     </div>
@@ -68,9 +68,13 @@
         &nbsp
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
+<<<<<<< HEAD
       <p>
         <%=link_to('Contact Selllllers', "/users/#{session[:user_id]}/chats#{session[:user_id]}?other_user=#{post.user.id}", class: "btn btn-primary") %>
       </p>
+=======
+      <a class="btn btn-primary" href="/users/<%=session[:user_id]%>/chats/<%=session[:user_id]%>?other_user=<%=post.user.id%>">Contact Seller</a>
+>>>>>>> 120774e72f9cbb6f175162905052c257f92ee277
     </div>
   </div>
 </div>

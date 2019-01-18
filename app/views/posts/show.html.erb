@@ -3,7 +3,13 @@
     <%=@post.picture.attachment.nil? ? content_tag(:div, "", class: "img-default"): image_tag(@post.picture)%>
   </div>
   <div>
-    <h1 class="center"><%=@post.name.upcase%></h1>
+    <h1 class="center"><%=@post.name.upcase%> &nbsp
+      <%if session[:user_id] == @post.user.id%>
+      <a class="post-icon" href="<%= edit_post_path(@post.id) %>">
+        <img src="/assets/edit.png">
+      </a>
+      <%end%>
+    </h1>
     <strong>By: </strong><a href="/users/<%= @post.user.id %>"><%=@post.user.username.capitalize%></a>
     <p><strong>Created: </strong><%=@post.created_at.strftime('%b %d, %C%y')%></p>
     <p><strong>Status: </strong><%=@post.status.capitalize%></p>
@@ -22,7 +28,7 @@
 
 <h1 class="center">Related Posts</h1> <br>
 <div class="related-posts">
-  <%posts = Post.where(category: @post.category_id).take(3)%>
+  <%posts = Post.where(category: @post.category_id).take(3).shuffle%>
   <div class="posts-grid">
     <%posts.reverse.each do |post|%>
      <%  if post.id != @post.id %>
