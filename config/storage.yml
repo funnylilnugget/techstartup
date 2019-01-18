@@ -15,12 +15,12 @@ local:
 #   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
-# google:
-  # service: GCS
-  # project: tech-startup
-  # credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
-  # bucket: ccnyimages
-# 
+    # google:
+    # service: GCS
+    # project: tech-startup
+    # credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
+    # bucket: ccnycimages
+#
 #   google:
 #   service: GCS
 #   project: tech-startup
