@@ -21,5 +21,5 @@ private
     def message_params
       params.require(:message).permit(:content, :chat_id)
     end
-    
+
 end

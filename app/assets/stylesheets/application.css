@@ -179,7 +179,7 @@ input[type=text], input[type=email], input[type=password], select{
 .btn-secondary {
   border: 2px solid #FB8122;
   color: #FB8122;
-  background-color: none;
+  background-color: #b5b5b7;
 }
 
 .btn-secondary:hover {
@@ -442,4 +442,37 @@ transform-origin: 0% 0%;
     top:0;
     opacity:1
   }
+}
+
+/******************** Messages / Chats ***********************/
+.msg-box {
+  background-color: #b5b5b7;
+  padding: 2%;
+  height: 50%;
+  border: 1px solid #677077;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+}
+
+#messages {
+  padding: 2%;
+  font-size: 1.3em;
+  color: #252839;
+}
+
+.bubble {
+  position: relative;
+	border-radius: .4em;
+  border: 1px solid #252839;
+  /* padding-bottom: 2%; */
+  padding-left: 2%;
+  margin-bottom: 3%;
+}
+
+.bubble span {
+  font-size: .7em;
+}
+
+.bubble img {
+  width: 50px;
+  height: 50px;
 }
