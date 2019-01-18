@@ -121,4 +121,8 @@ Rails.application.configure do
   authentication:       'plain',
   enable_starttls_auto: true  }
 
+  Raven.configure do |config|
+    config.dsn = ENV['SENTRY_DSN']
+  end
+
 end
