@@ -32,7 +32,9 @@
         &nbsp
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
-      <a class="btn btn-primary" href="/users/<%=session[:user_id]%>/chats/<%=session[:user_id]%>?other_user=<%=post.user.id%>">Contact Seller</a>
+      <p>
+        <%= link_to("Contact Seller", user_chats_path(current_user, :other_user => post.user.id, :post => post.id), method: :post, class: "btn btn-primary") %>
+      </p>
     </div>
   </div>
 </div>
@@ -64,7 +66,9 @@
         &nbsp
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
-      <a class="btn btn-primary" href="/users/<%=session[:user_id]%>/chats/<%=session[:user_id]%>?other_user=<%=post.user.id%>">Contact Seller</a>
+      <p>
+        <%= link_to("Contact Seller", user_chats_path(current_user, :other_user => post.user.id, :post => post.id), method: :post, class: "btn btn-primary") %>
+      </p>
     </div>
   </div>
 </div>
