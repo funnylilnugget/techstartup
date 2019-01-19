@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'whenever', :require => false
+gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -70,3 +71,5 @@ group :production do
 end
 
 gem "google-cloud-storage", "~> 1.8", require: false
+
+gem 'stripe'

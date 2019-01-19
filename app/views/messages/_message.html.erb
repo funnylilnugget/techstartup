@@ -1,0 +1,6 @@
+<div class="bubble">
+  <p>
+    <%= image_tag(message.user.picture, class: "userimg") if message.user.picture.attached?%>
+    <%= message.user.username.capitalize %>: <%=message.content%> <br>
+  <span>  Sent: <%= message.created_at.strftime('%b %d, %C%y %r') %></span> </p>
+</div>
