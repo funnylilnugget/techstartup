@@ -32,7 +32,7 @@ private
   def find_chat(second_user, post)
     chats = current_user.chats
     chats.each do |chat|
-      if chat.post_id == @post.id
+      if chat.post_id == post.id
         chat.subscriptions.each do |s|
           if s.user_id == second_user.id
             return chat
