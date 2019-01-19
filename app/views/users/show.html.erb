@@ -18,6 +18,12 @@
     <%= link_to user_path, remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: 'icon' do %>
     <%= image_tag("/assets/delete.png") %>
     <% end %>
+    <br> <br>
+    <%if @user.premium? == false %>
+    <a class="btn btn-primary" href="<%=new_charge_path%>">Go Premium</a>
+    <%else%>
+    <h2>Premium Member</h2>
+    <%end%>
   </div>
 </div>
 <hr>
