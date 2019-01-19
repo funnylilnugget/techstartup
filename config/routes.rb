@@ -7,10 +7,13 @@ resources :posts
 resources :users
 resources :categories, only: [:index, :show]
 resources :sessions, only: [:new, :create, :destroy]
+resources :boroughs, only: [:show]
 
-
-
-
+get 'locations/manhattan', to: 'locations#manhattan'
+get 'locations/brooklyn', to: 'locations#brooklyn'
+get 'locations/queens', to: 'locations#queens'
+get 'locations/the_bronx', to: 'locations#the_bronx'
+get 'locations/staten_island', to: 'locations#staten_island'
 
 get '/login', to: 'sessions#login'
 post '/login', to: 'sessions#create'
