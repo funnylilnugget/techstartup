@@ -10,6 +10,8 @@ resources :users, only:[:index, :edit, :update]
 resources :categories, only: [:index, :show]
 resources :sessions, only: [:new, :create, :destroy]
 
+resources :charges
+
 resources :users, only:[:new, :create, :show] do
    resources :chats, only: [:index, :show, :create]
   end
