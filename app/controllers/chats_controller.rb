@@ -23,6 +23,7 @@ class ChatsController < ApplicationController
   def show
     @other_user = User.find(params[:other_user])
     @chat = Chat.find_by(id: params[:id])
+    @post = Post.find_by_id(@chat.post_id)
     @message = Message.new
   end
 

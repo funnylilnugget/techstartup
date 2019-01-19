@@ -5,14 +5,26 @@
     <div id="messages">
       <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
     </div>
-  <%else%>
+  <% else%>
     <div id="messages">
     </div>
-  <%end%>
+  <% end%>
 </div>
 <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat}%>
 </div>
+<div  id='status' class="hidden">
+  <p>Settled on a meeting time and place? Hit the button to change your post status</p>
+  <%= form_for(@post) do |f|%>
+  <%= f.hidden_field :status, value: 'in-progress'%>
+  <%= f.submit "Change Status"%>
+  <% end%>
+</div>
 <script>
+  messages = document.querySelectorAll('.bubble')
+  changeStatus = document.getElementById('status')
+  if(messages.length > 8){
+    changeStatus.classList.remove('hidden')
+  }
   createMessageChannel();
   // app/assets/javascripts/channels/messages.js
   messageForm();
