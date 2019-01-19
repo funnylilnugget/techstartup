@@ -11,6 +11,8 @@ resources :categories, only: [:index, :show]
 resources :sessions, only: [:new, :create, :destroy]
 resources :boroughs, only: [:show]
 
+
+#Stripe
 resources :charges
 
 resources :users, only:[:new, :create, :show] do

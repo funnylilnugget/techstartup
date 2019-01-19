@@ -6,13 +6,15 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: $<%=sprintf('%.2f', @amount_dollar)%></span> <br>
+      <span>Tax: $<%=@tax.round(2)%></span> <br>
+      <span>Total: $<%=@total.round(2)%></span> <br>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
+          data-description="Here's Your Subscription"
+          data-amount="545"
           data-locale="auto"></script>
 <% end %>
