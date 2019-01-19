@@ -10,7 +10,10 @@ resources :users, only:[:index, :edit, :update]
 resources :categories, only: [:index, :show]
 resources :sessions, only: [:new, :create, :destroy]
 
+<<<<<<< HEAD
 #Stripe
+=======
+>>>>>>> 2c85262db1bfa0a4e4ec5c34dfd2c71a0cdeffc5
 resources :charges
 
 resources :users, only:[:new, :create, :show] do
