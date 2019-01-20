@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user, optional: true
+  # has_many :chats
   belongs_to :category, optional: true
   has_one_attached :picture
   validates :name, :description, :tags, presence: true

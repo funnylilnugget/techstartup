@@ -7,7 +7,7 @@
     <% end %>
     Active Messages With:
     <ul>
-        <% @chats.each do |chat|%>
+        <% @chats.uniq.each do |chat|%>
         <%= chat.post.name%>
         <li>
         <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
@@ -15,16 +15,4 @@
         <% end %>
       </li>
       <% end %>
-</ul>
-All Users:
-<ul>
-  <% User.all.each do |other_user| %>
-   <% if other_user != current_user %>
-     <li>
-       <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-       <%= other_user.username %>
-       <% end %>
-     </li>
-    <% end %>
-  <% end %>
 </ul>

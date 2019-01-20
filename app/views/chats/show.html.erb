@@ -20,21 +20,21 @@
   <% end%>
 </div>
 <script>
-  changeStatus = document.getElementById('status');
-  messages = document.querySelectorAll('.bubble')
-
-  function checkMessages() {
-    if(messages.length >= 1 && <%= @post.user.id%> == <%= session[:user_id]%>) {
-      changeStatus.classList.remove('hidden')
-    };
-  };
-
-  if (messages.length <= 1) {
-    checkMessages();
-  };
-
   createMessageChannel();
   // app/assets/javascripts/channels/messages.js
   messageForm();
   // app/assets/javascripts/messages_form.js
+  changeStatus = document.getElementById('status');
+
+  function checkMessages() {
+    messages = document.querySelectorAll('.bubble')
+    if(messages.length >= 4 && <%= @post.user.id%> == <%= session[:user_id]%> && <%= @post.status == 'open'%>) {
+      changeStatus.classList.remove('hidden')
+    }else {
+    setInterval(checkMessages(),10000)
+    };
+  };
+
+  checkMessages();
+
 </script>
