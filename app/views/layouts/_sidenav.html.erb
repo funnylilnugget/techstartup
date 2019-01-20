@@ -15,8 +15,17 @@
 
       <%= link_to 'View Profile & Posts', user_path(session[:user_id]) %><br>
       <br>
-      <%= link_to 'Create a new post', new_post_path %>
+      <%= link_to 'Create a new post', new_post_path %> <br>
+      <p>Search By Locations</p>
+      <p>
+        <%=link_to 'Manhattan',  locations_manhattan_path%> <br>
+        <%=link_to 'Brooklyn',  locations_brooklyn_path%> <br>
+        <%=link_to 'The Bronx',  locations_the_bronx_path%> <br>
+        <%=link_to 'Staten Island',  locations_staten_island_path%>
+      </p>
     </ul>
+
+
   </div>
 </nav>
 <% end %>

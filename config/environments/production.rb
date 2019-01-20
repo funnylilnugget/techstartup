@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.web_socket_server_url = "wss://community-chest-v2.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://community-chest-v2.herokuapp.com', 'http://community-chest-v2.herokuapp.com']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -11,7 +13,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
@@ -99,6 +101,7 @@ Rails.application.configure do
   #   arguments: '-i'
   # }
 
+
   if ENV['RACK_ENV']
     ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
   else
@@ -119,4 +122,4 @@ Rails.application.configure do
   authentication:       'plain',
   enable_starttls_auto: true  }
 
-end
+  end
