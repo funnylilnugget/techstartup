@@ -8,11 +8,13 @@
     Active Messages With:
     <ul>
         <% @chats.uniq.each do |chat|%>
+        <%if chat.post != nil%>
         <%= chat.post.name%>
         <li>
         <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
         <%="#{@other_user.username} regarding #{chat.post.name}" %>
         <% end %>
       </li>
+      <% end %>
       <% end %>
 </ul>

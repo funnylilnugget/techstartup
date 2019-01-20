@@ -1,6 +1,6 @@
 <div class="msg-box">
   <h2 class="center">Chatting with: <%=@other_user.username.capitalize%></h2>
-  <h2>Post: <%=@other_user.posts.name%></h2>
+  <h2 class="center">Post: <%=link_to "#{@chat.post.name}", post_path(@chat.post.id)%></h2>
   <% if @chat.messages.any? %>
     <div id="messages">
       <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
