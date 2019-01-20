@@ -20,11 +20,19 @@
   <% end%>
 </div>
 <script>
+  changeStatus = document.getElementById('status');
   messages = document.querySelectorAll('.bubble')
-  changeStatus = document.getElementById('status')
-  if(messages.length > 8){
-    changeStatus.classList.remove('hidden')
-  }
+
+  function checkMessages() {
+    if(messages.length >= 1 && <%= @post.user.id%> == <%= session[:user_id]%>) {
+      changeStatus.classList.remove('hidden')
+    };
+  };
+
+  if (messages.length <= 1) {
+    checkMessages();
+  };
+
   createMessageChannel();
   // app/assets/javascripts/channels/messages.js
   messageForm();
