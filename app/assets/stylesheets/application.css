@@ -530,5 +530,32 @@ transform-origin: 0% 0%;
 /******************** Membership Page ***********************/
 .premium {
   display: grid;
-  grid-template: 100% / 50% 50%;
+  width: 100%;
+  grid-template: 100% / 20% 30% 30% 20%;
+  justify-content: center;
+  grid-gap: 5%;
+}
+
+.premium div:nth-child(2) {
+  background-color: #ebebeb;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+  transition: transform 0.3s ease-in-out;
+  padding-bottom: 5%;
+}
+
+.premium div:nth-child(2):hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+
+.premium div:nth-child(3) {
+  background-color: #ebebeb;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+  transition: transform 0.3s ease-in-out;
+  padding-bottom: 5%;
+}
+
+.premium div:nth-child(3):hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 5px 5px 5px rgba(0,0,0,.5);
 }

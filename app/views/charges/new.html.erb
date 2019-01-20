@@ -1,39 +1,50 @@
+<%= form_tag charges_path do %>
 <h1 class="center">Go Premium</h1>
 <div class="premium">
-  <div>
-    <h2 class="center">Forever Free</h2>
-    <h3 class="center"><strong>$0.00</strong>/year</h3>
-    <ul>
-      <li>See 3 posts per day</li>
-    </ul>
+  <div></div>
+  <div class="center">
+    <h2>Forever Free</h2>
+    <h3><strong>$0.00</strong>/year</h3>
+    <p>See 3 posts per day</p>
+    <a class="btn btn-primary" href="<%=user_path(session[:user_id])%>">Select Free</a>
   </div>
 
-  <div>
-    <h2 class="center">Forever Premium</h2>
-    <h3 class="center"><strong>$<%=@total.round(2)%></strong>/year</h3>
-    <ul>
-      <li>See unlimited posts per day</li>
-    </ul>
+  <div class="center">
+    <h2>Forever Premium</h2>
+    <h3><strong>$<%=@total.round(2)%></strong>/year</h3>
+    <p>See unlimited posts per day</p>
+    <a class="btn btn-secondary" onclick="showBtn()">Get Premium</a>
+
+  <div id="stripe-btn" class="hidden">
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <br>
+      <label class="amount">
+        <span>Membership: $<%=sprintf('%.2f', @amount_dollar)%></span> <br>
+        <span>Tax: $<%=@tax.round(2)%></span> <br>
+        <span>Total: $<%=@total.round(2)%></span> <br>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Forever Premium Subscription"
+            data-amount="545"
+            data-locale="auto">
+    </script>
+    <script>
+      function showBtn() {
+        var btn = document.getElementById("stripe-btn");
+        btn.classList.remove("hidden");
+      }
+    </script>
   </div>
+
+  </div>
+  <div></div>
 </div>
-<!--
-# <%= form_tag charges_path do %>
-#   <article>
-#     <% if flash[:error].present? %>
-#       <div id="error_explanation">
-#         <p><%= flash[:error] %></p>
-#       </div>
-#     <% end %>
-#     <label class="amount">
-#       <span>Amount: $<%=sprintf('%.2f', @amount_dollar)%></span> <br>
-#       <span>Tax: $<%=@tax.round(2)%></span> <br>
-#       <span>Total: $<%=@total.round(2)%></span> <br>
-#     </label>
-#   </article>
-#
-#   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-#           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-#           data-description="Here's Your Subscription"
-#           data-amount="545"
-#           data-locale="auto"></script>
-# <% end %> -->
+<% end %>
