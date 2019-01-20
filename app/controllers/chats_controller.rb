@@ -3,7 +3,7 @@ class ChatsController < ApplicationController
   before_action :require_login
 
   def index
-    chats = current_user.chats
+    @chats = current_user.chats
     @existing_chats_users = current_user.existing_chats_users
   end
 
