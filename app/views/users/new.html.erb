@@ -1,42 +1,25 @@
+<body id="accountbg">
 <div class="account">
   <div class="animate-up center">
     <h1> Sign Up</h1>
 
     <%= form_for(@user) do |u|%>
-
-    <p>
       <%= u.text_field :first_name, placeholder: "First Name" %>
-    </p>
-
-    <p>
       <%= u.text_field :last_name, placeholder: "Last Name" %>
-    </p>
-
-    <p>
       <%= u.email_field :email, placeholder: "Email"%>
-    </p>
-
-    <p>
       <%= u.text_field :username, placeholder: "User Name" %>
-    </p>
-
-    <p>
       <%= u.password_field :password, placeholder: "Password" %>
-    </p>
-
-    <p>
       <%= u.password_field :password_confirmation, placeholder: "Confirm Password"%>
-    </p>
 
     <p>
       <label> Select your location:</label><br>
       <%= u.collection_select :location_id, Location.order(:name), :id, :name, { include_blank: true } %><br>
     </p>
 
-    <p>
-      <label>Upload A Profile Picture:</label>
-      <%= u.file_field :picture, direct_upload: true %>
-    </p>
+    <label>Profile Picture: </label>
+    <label class="fileupload">Choose File
+      <%= u.file_field :picture, direct_upload: true, id: "fileupload"%>
+    </label> <br> <br>
     <p>
       <%= u.submit 'Sign Up', class: "btn btn-primary" %>
     </p>
@@ -56,3 +39,4 @@
 
   </div>
 </div>
+</body>

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       p @user.errors.messages
+      flash[:notice] = "#{@user.errors.messages}"
       render 'new'
     end
   end
