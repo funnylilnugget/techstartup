@@ -5,27 +5,27 @@
     <%= form_for(@user) do |u|%>
 
     <p>
-      <%= u.text_field :first_name, placeholder: "First Name" %>
+      <%= u.text_field :first_name, placeholder: "First Name", :required => true %>
     </p>
 
     <p>
-      <%= u.text_field :last_name, placeholder: "Last Name" %>
+      <%= u.text_field :last_name, placeholder: "Last Name", :required => true %>
     </p>
 
     <p>
-      <%= u.email_field :email, placeholder: "Email"%>
+      <%= u.email_field :email, placeholder: "Email", :required => true %>
     </p>
 
     <p>
-      <%= u.text_field :username, placeholder: "User Name" %>
+      <%= u.text_field :username, placeholder: "User Name", :required => true %>
     </p>
 
     <p>
-      <%= u.password_field :password, placeholder: "Password" %>
+      <%= u.password_field :password, placeholder: "Password", :required => true %>
     </p>
 
     <p>
-      <%= u.password_field :password_confirmation, placeholder: "Confirm Password"%>
+      <%= u.password_field :password_confirmation, placeholder: "Confirm Password", :required => true %>
     </p>
 
     <p>
