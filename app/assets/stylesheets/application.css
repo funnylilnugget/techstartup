@@ -534,6 +534,7 @@ transform-origin: 0% 0%;
   grid-template: 100% / 20% 30% 30% 20%;
   justify-content: center;
   grid-gap: 5%;
+  cursor: pointer;
 }
 
 .premium div:nth-child(2) {
