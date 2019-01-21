@@ -1,23 +1,20 @@
 <div class="message-board">
 <% if @existing_chats_users %>
-   <% @existing_chats_users.each do |other_user| %>
+  <% @existing_chats_users.each do |other_user| %>
     <% if other_user != current_user %>
-    <% @other_user = other_user%>
+      <% @other_user = other_user%>
+      <% end %>
     <% end %>
-    <% end %>
-    <ul>
-        <% @chats.uniq.each do |chat|%>
-        <h3>Active Messages With:</h3>
-        <li>
-        <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
+  
+    <% @chats.uniq.each do |chat|%>
+      <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
         <%if chat.post != nil%>
-        <%="Message from: #{@other_user.username} regarding #{chat.post.name}" %>
+        <p>
+          <%=image_tag(@other_user.picture) if @other_user.picture.attached?%>
+          <%= "Message from: #{@other_user.username.capitalize} regarding post: #{chat.post.name}" %>
+        </p>
+          <% end %>
         <% end %>
-      </li>
       <% end %>
-      <% end %>
-</ul>
-<% else %>
-<h3>There are no messages at this time</h3>
-<% end %>
+    <% end %>
 </div>

@@ -8,16 +8,16 @@
 <div class="product-container">
   <div class="product-card">
     <div>
-      <a href="<%=post_path(post.id)%>">
-        <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "product-default"): image_tag(post.picture, class: "pst-img")%>
+      <a href="<%= post_path(post.id)%>">
+        <%= post.picture.attachment.nil? ? content_tag(:div, "", class: "product-default"): image_tag(post.picture, class: "pst-img")%>
       </a>
     </div>
     <div class="center">
       <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
       <p>
-        <strong>By:</strong> <a href="/users/<%= post.user.id %>"><%=post.user.username.capitalize%></a> &nbsp
-        <strong>Created:</strong> <%=post.created_at.strftime('%b %d, %C%y')%> &nbsp
-        <strong>Status:</strong> <%=post.status.capitalize%>
+        <strong>By:</strong> <a href="/users/<%= post.user.id %>"><%= post.user.username.capitalize%></a> &nbsp
+        <strong>Created:</strong> <%= post.created_at.strftime('%b %d, %C%y')%> &nbsp
+        <strong>Status:</strong> <%= post.status.capitalize%>
       </p>
       <p>
         <%=post.description.truncate(100)%> <br>
@@ -33,7 +33,7 @@
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
       <p>
-        <% unless session[:user_id] == post.user.id %>
+        <% unless session[:user_id] == post.user.id || post.status == 'in-progress' %>
         <%= link_to("Contact Seller", user_chats_path(current_user, :other_user => post.user.id, :post => post.id), method: :post, class: "btn btn-primary") %>
         <% end %>
       </p>
@@ -50,10 +50,10 @@
       </a>
     </div>
     <div class="center">
-      <a class="heading" href="<%=post_path(post.id)%>"><%=post.name.upcase%></a>
+      <a class="heading" href="<%= post_path(post.id)%>"><%= post.name.upcase%></a>
       <p>
         <strong>By:</strong> <a href="/?search=%23<%= post.user.username %>&submit=Search"><%=post.user.username.capitalize%></a> &nbsp
-        <strong>Created:</strong> <%=post.created_at.strftime('%b %d, %C%y')%> &nbsp
+        <strong>Created:</strong> <%= post.created_at.strftime('%b %d, %C%y')%> &nbsp
         <strong>Status:</strong> <%=post.status.capitalize%>
       </p>
       <p>
@@ -79,7 +79,6 @@
 </div>
 <% end %>
 <% end %>
-<%= will_paginate @posts, page_links: false %>
-<%else%>
+<% else%>
 <h1 class="center">There are no posts at this time</h1>
 <% end %>
