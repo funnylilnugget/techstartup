@@ -1,25 +1,30 @@
-<h1> Create a new post </h1><br>
-
-<%= form_for(@post) do |post| %>
-
-
-<label> Enter a title for your post </label> <br>
-<%= post.text_field :name %> <br>
-
-<label>Type out a short description</label> <br>
-<%= post.text_field :description %> <br>
-
-<label>Put some tags for your item</label> <br>
-<%= post.text_field :tags %> <br>
-
-<label>Select a category</label><br>
-<%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %><br>
-
-<label>Upload A Picture:</label>
-<%= post.file_field :picture, direct_upload: true %><br>
-
-<p>
-  <%= post.submit %>
-</p>
-
-<% end %>
+<div class="forms">
+  <h1 class="center">Create Post</h1>
+  <div class="forms-grid">
+    <%= form_for(@post) do |post| %>
+    <p>
+      Post title <br>
+      <%= post.text_field :name %>
+    </p>
+    <p>
+      Description <br>
+      <%= post.text_area :description, size: "25x9" %>
+    </p>
+    <p>
+      Include tags separated by spaces <br>
+      <%= post.text_field :tags %>
+    </p>
+    <p>
+      Select a category <br>
+      <%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %>
+    </p>
+    <label>Post Image </label>
+    <label class="fileupload-pt">Choose File
+      <%= post.file_field :picture, direct_upload: true, id: "fileupload"%>
+    </label> <br>
+  </div> <br>
+  <p class="center">
+    <%= post.submit "Create Post", class: "btn btn-secondary" %>
+  </p>
+  <% end %>
+</div>

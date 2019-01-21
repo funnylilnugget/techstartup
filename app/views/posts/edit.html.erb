@@ -4,20 +4,20 @@
   <div class="forms-grid">
     <%= form_for(@post) do |post| %>
     <p>
-      Post Title <br>
+      Post title <br>
       <%= post.text_field :name %> <br>
     </p>
     <p>
       Description <br>
-      <%= post.text_area :description, size: "25x9" %> <br>
+      <%= post.text_area :description, size: "25x9" %>
     </p>
     <p>
       Tags <br>
-      <%= post.text_field :tags %> <br><br>
+      <%= post.text_field :tags %>
     </p>
     <p>
       Category <br>
-      <%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %><br>
+      <%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %>
     </p>
     <label>Post Image </label>
     <label class="fileupload-pt">Choose File
@@ -25,7 +25,7 @@
     </label> <br>
     <p>
       Post Status <br>
-      <%= post.select :status, ["Open", "In Progress", "Closed"]%><br>
+      <%= post.select :status, ["Open", "In Progress", "Closed"]%>
     </p>
   </div>
   <p class="center">
