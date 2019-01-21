@@ -1,8 +1,7 @@
-<%posts = Post.all%>
-<%if posts.exists? %>
+<%if @posts.exists? %>
 <h1 class="center">Latest Post</h1>
 
-<%posts.reverse.each do |post|%>
+<%@posts.each do |post|%>
 
 <% if params["search"] == nil %>
 
@@ -80,6 +79,7 @@
 </div>
 <% end %>
 <% end %>
+<%= will_paginate @posts, page_links: false %>
 <%else%>
 <h1 class="center">There are no posts at this time</h1>
 <% end %>
