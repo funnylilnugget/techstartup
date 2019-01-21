@@ -20,7 +20,9 @@
     <% t = tag.sub('#','') %>
     <a href="/?search=%23<%= t %>&submit=Search"><%=tag%></a>
     <% end %>
+    <% unless session[:user_id] == @post.user.id %>
     <%= link_to("Contact", user_chats_path(current_user, :other_user => @post.user.id, :post => @post.id), method: :post) %>
+    <% end %>
   </div>
 </div>
 
