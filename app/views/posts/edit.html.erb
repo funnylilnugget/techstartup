@@ -3,22 +3,22 @@
 <%= form_for(@post) do |post| %>
 
 
-<label> Enter a title for your post: </label><br>
+<label><b>Enter a title for your post:</b> </label><br>
 <%= post.text_field :name %> <br>
 
-<label>Type out a short description: </label><br>
+<label><b>Type out a short description:</b> </label><br>
 <%= post.text_field :description %> <br>
 
-<label>Put some tags for your item: </label> <br>
+<label><b>Put some tags for your item:</b> </label> <br>
 <%= post.text_field :tags %> <br><br>
 
-<label>Select a category</label><br>
+<label><b>Select a category: </b></label><br>
 <%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %><br>
 
-<label>Edit picture: </label> <br>
+<label><b>Edit picture: </b></label> <br>
 <%= post.file_field :picture, direct_upload: true %><br><br>
 
-<label>Status of item: </label> <br>
+<label><b>Status of item: </b></label> <br>
 <%= post.select :status, ["Open", "In Progress", "Closed"]%><br>
 <p>
   <%= post.submit %>
