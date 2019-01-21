@@ -1,27 +1,35 @@
-<h1> Edit Post </h1><br>
-
-<%= form_for(@post) do |post| %>
-
-
-<label> Enter a title for your post: </label><br>
-<%= post.text_field :name %> <br>
-
-<label>Type out a short description: </label><br>
-<%= post.text_field :description %> <br>
-
-<label>Put some tags for your item: </label> <br>
-<%= post.text_field :tags %> <br><br>
-
-<label>Select a category</label><br>
-<%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %><br>
-
-<label>Edit picture: </label> <br>
-<%= post.file_field :picture, direct_upload: true %><br><br>
-
-<label>Status of item: </label> <br>
-<%= post.select :status, ["Open", "In Progress", "Closed"]%><br>
-<p>
-  <%= post.submit %>
-</p>
-
-<% end %>
+<div class="forms">
+  <h1 class="center"><%=@post.name.capitalize%></h1>
+  <h2 class="center">Edit Post</h2>
+  <div class="forms-grid">
+    <%= form_for(@post) do |post| %>
+    <p>
+      Post Title <br>
+      <%= post.text_field :name %> <br>
+    </p>
+    <p>
+      Description <br>
+      <%= post.text_area :description, size: "25x9" %> <br>
+    </p>
+    <p>
+      Tags <br>
+      <%= post.text_field :tags %> <br><br>
+    </p>
+    <p>
+      Category <br>
+      <%= post.collection_select :category_id, Category.order(:name), :id, :name, { include_blank: true } %><br>
+    </p>
+    <label>Post Image </label>
+    <label class="fileupload-pt">Choose File
+      <%= post.file_field :picture, direct_upload: true, id: "fileupload"%>
+    </label> <br>
+    <p>
+      Post Status <br>
+      <%= post.select :status, ["Open", "In Progress", "Closed"]%><br>
+    </p>
+  </div>
+  <p class="center">
+    <%= post.submit "Save Changes", class: "btn btn-secondary" %>
+  </p>
+  <% end %>
+</div>

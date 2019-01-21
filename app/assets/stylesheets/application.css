@@ -34,6 +34,7 @@ body {
 #accountbg {
   margin: 0;
   background-image: url("https://images.unsplash.com/photo-1543547298-0927e8c18ee9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
   background-color: rgba(0, 0, 0, 0.7);
   background-blend-mode: overlay;
 }
@@ -166,7 +167,7 @@ a:hover {
 }
 
 /***************** Forms ****************/
-input[type=text], input[type=email], input[type=password], select{
+input[type=text], textarea, input[type=email], input[type=password], select{
   width: 75%;
   background-color: #e3e3e3;
   font-size: .87em;
@@ -190,6 +191,20 @@ input[type=text], input[type=email], input[type=password], select{
 .fileupload:hover {
   border: 1px solid #f2b632;
   background-color: #f2b632;
+  color: #F1F1EF;
+}
+
+.fileupload-pt {
+  position: relative;
+  padding: 1% 1%;
+  text-decoration: none;
+  border: 1px solid #FB8122;
+  color: #FB8122;
+  background: none;
+}
+.fileupload-pt:hover {
+  border: 1px solid #FB8122;
+  background-color: #FB8122;
   color: #F1F1EF;
 }
 
@@ -605,4 +620,19 @@ transform-origin: 0% 0%;
   height: 100%;
   transform: scale(1.1, 1.1);
   box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+
+
+/**************** Create/Edit forms *****************/
+.forms {
+  display: grid;
+  background-color: #aaaaac;
+  width: 100%;
+  grid-template-columns: 100%;
+  justify-content: center;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,.5);
+}
+
+.forms-grid {
+  margin-left: 15%;
 }
