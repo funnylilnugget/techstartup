@@ -1,26 +1,20 @@
-<ul>
  <% if @existing_chats_users %>
    <% @existing_chats_users.each do |other_user| %>
     <% if other_user != current_user %>
-      <li>
-        Active Messages With:
-        <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-        <%= other_user.username %>
+    <% @other_user = other_user%>
+    <% end %>
+    <% end %>
+    <% end %>
+    Active Messages With:
+    <ul>
+        <% @chats.uniq.each do |chat|%>
+        <%if chat.post != nil%>
+        <%= chat.post.name%>
+        <li>
+        <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
+        <%="#{@other_user.username} regarding #{chat.post.name}" %>
         <% end %>
       </li>
-     <% end %>
-   <% end %>
-  <% end %>
-</ul>
-All Users:
-<ul>
-  <% User.all.each do |other_user| %>
-   <% if other_user != current_user %>
-     <li>
-       <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-       <%= other_user.username %>
-       <% end %>
-     </li>
-    <% end %>
-  <% end %>
+      <% end %>
+      <% end %>
 </ul>
