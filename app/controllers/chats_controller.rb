@@ -11,8 +11,8 @@ class ChatsController < ApplicationController
     @other_user = User.find(params[:other_user])
     @post = Post.find_by_id(params[:post])
     @chat = find_chat(@other_user, @post) || Chat.new(identifier: SecureRandom.hex)
-    @chat.post = @post
     if !@chat.persisted?
+      @chat.post = @post
       @chat.save
       @chat.subscriptions.create(user_id: current_user.id)
       @chat.subscriptions.create(user_id: @other_user.id)
