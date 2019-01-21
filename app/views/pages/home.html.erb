@@ -33,7 +33,9 @@
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
       <p>
+        <% unless session[:user_id] == post.user.id %>
         <%= link_to("Contact Seller", user_chats_path(current_user, :other_user => post.user.id, :post => post.id), method: :post, class: "btn btn-primary") %>
+        <% end %>
       </p>
     </div>
   </div>
