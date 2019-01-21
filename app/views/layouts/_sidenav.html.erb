@@ -17,8 +17,7 @@
       <br>
       <%= link_to 'Create a new post', new_post_path(session[:user_id]) %> <br><br>
       <%= link_to 'View Chats', user_chats_path(session[:user_id]) %> <br>
-      <p>Search By Locations</p>
-      <p>
+      <p>Search By Location <br>
         <%=link_to 'Manhattan',  locations_manhattan_path%> <br>
         <%=link_to 'Brooklyn',  locations_brooklyn_path%> <br>
         <%=link_to 'Queens',  locations_queens_path%> <br>

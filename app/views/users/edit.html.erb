@@ -26,7 +26,7 @@
 <%= u.password_field :password_confirmation %><br>
 
 <label> Select your location:</label><br>
-<%= u.select :location, ["", "Brooklyn", "Queens", "Manhattan", "Bronx", "Staten Island"]%><br>
+<%= u.select :location, ["Brooklyn", "Queens", "Manhattan", "Bronx", "Staten Island"]%><br>
 
 <label>Upload A Profile Picture:</label>
 <%= u.file_field :picture, direct_upload: true %>

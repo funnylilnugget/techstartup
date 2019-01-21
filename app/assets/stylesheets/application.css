@@ -43,12 +43,8 @@ a {
   color: #f2b632;
 }
 
-.half-toppadding {
-  padding-top: 50%;
-}
-
-.qtr-toppadding {
-  padding-top: 25%;
+a:hover {
+  color: #9f6f06;
 }
 
 .center {
@@ -61,7 +57,9 @@ a {
 }
 
 .userimg {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: 50%;
 }
 
@@ -75,13 +73,13 @@ a {
 .account {
   width: 100%;
   display: grid;
-  grid-template: 700px / 50% 50%;
+  grid-template: 680px / 50% 50%;
 }
 
 .account div:nth-child(1) {
   padding: 5%;
   color: #F1F1EF;
-  background-color: #393c48;
+  background-color: rgba(57,60,72, 0.7);
   border-top: 2px solid #f2b632;
   border-left: 2px solid #f2b632;
   border-bottom: 2px solid #f2b632;
@@ -92,12 +90,25 @@ a {
 .account div:nth-child(2) {
   padding: 5%;
   color: #F1F1EF;
-  background-color: #252839;
+  background-color: rgba(37,40,57, 0.7);
   border-top: 2px solid #f2b632;
   border-right: 2px solid #f2b632;
   border-bottom: 2px solid #f2b632;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+.account img {
+  height: 130px;
+  width: 130px;
+}
+
+#paddingtop {
+  padding-top: 20%;
+}
+
+#paddingtopqtr {
+  padding-top: 30%;
 }
 
 /***************** Product Card Dashboard ****************/
@@ -109,6 +120,7 @@ a {
   padding: 2%;
   padding-left: 12.5%;
 }
+
 
 .product-card {
   display: grid;
@@ -449,25 +461,48 @@ transform-origin: 0% 0%;
   animation-duration: 1s;
 }
 
- @keyframes animateup {
+ @keyframes animatedown {
   from {
-    top:-300px;
-    opacity:1
+    top: 300px;
+    opacity: 1;
   }
   to {
-    top:0;
-    opacity:1
+    top: 0;
+    opacity: 1;
   }
 }
 
- @keyframes animatedown {
+.slidein-left {
+  position: relative;
+  animation-name: slideleft;
+  animation-duration: 1s;
+}
+
+@keyframes slideleft {
   from {
-    top:300px;
-    opacity:1
+    left: 100%;
+    opacity: 1;
   }
   to {
-    top:0;
-    opacity:1
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.slidein-right {
+  position: relative;
+  animation-name: slideright;
+  animation-duration: 1s;
+}
+
+@keyframes slideright {
+  from {
+    right: 100%;
+    opacity: 1;
+  }
+  to {
+    right: 0;
+    opacity: 1;
   }
 }
 
@@ -484,6 +519,14 @@ transform-origin: 0% 0%;
   padding: 2%;
   font-size: 1.3em;
   color: #252839;
+}
+
+.message-board a {
+  color: #252839;
+}
+
+.message-board a:hover {
+  color: #f2b632;
 }
 
 .bubble {
@@ -531,13 +574,14 @@ transform-origin: 0% 0%;
 .premium {
   display: grid;
   width: 100%;
-  grid-template: 100% / 20% 30% 30% 20%;
+  grid-template: 300px / 20% 30% 30% 20%;
   justify-content: center;
   grid-gap: 5%;
   cursor: pointer;
 }
 
 .premium div:nth-child(2) {
+  padding-top: 2%;
   background-color: #ebebeb;
   box-shadow: 5px 5px 5px rgba(0,0,0,.5);
   transition: transform 0.3s ease-in-out;
@@ -550,6 +594,7 @@ transform-origin: 0% 0%;
 }
 
 .premium div:nth-child(3) {
+  padding-top: 2%;
   background-color: #ebebeb;
   box-shadow: 5px 5px 5px rgba(0,0,0,.5);
   transition: transform 0.3s ease-in-out;
@@ -557,6 +602,7 @@ transform-origin: 0% 0%;
 }
 
 .premium div:nth-child(3):hover {
+  height: 100%;
   transform: scale(1.1, 1.1);
   box-shadow: 5px 5px 5px rgba(0,0,0,.5);
 }

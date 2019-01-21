@@ -1,23 +1,28 @@
 <body id="accountbg">
 <div class="account">
-  <div class="animate-up">
-    <h1 class="half-toppadding center">Community Chest</h1>
-    <h2 class="center">Something Something</h2>
-    <p class="center">
+  <div class="slidein-right center">
+    <h1 id="paddingtop">
+      <img src="/assets/tc2.png"> <br>
+      Community Chest
+    </h1>
+    <h2>Something Something</h2>
+    <h3>Don't have an account?</h3>
+    <p>
       <%=link_to 'Sign Up', new_user_path, class: "btn btn-secondary"%>
     </p>
   </div>
-  <div class="animate-down">
-    <h1 class="qtr-toppadding center">Sign In</h1>
+  <div class="slidein-left center">
+    <h1 id="paddingtopqtr">Sign In</h1>
+    <h3></h3>
 
     <%= form_for(:session, url: login_path) do |f| %>
-      <p class="center">
+      <p>
         <%= f.email_field :email, placeholder: "Email" %>
       </p>
-      <p class="center">
+      <p>
         <%= f.password_field :password, placeholder: "Password" %>
       </p>
-      <p class="center">
+      <p>
         <%= f.submit 'Login', class: "btn btn-primary" %>
       </p>
     <% end %>

@@ -4,7 +4,7 @@
 
 .post-grid {
   display: grid;
-  grid-template: 100% /  40% 50%;
+  grid-template: 100% /  50% 50%;
   justify-content: center;
   grid-gap: 5%;
   color: #252839;
@@ -37,4 +37,25 @@
 .post-icon img{
   height: 25px;
   width: 25px;
+}
+
+.post-icon span{
+  font-size: .5em;
+}
+
+.post-icon .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #414141;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 0;
+  position: absolute;
+  z-index: 1;
+  margin-top: -20px;
+}
+
+.post-icon:hover .tooltiptext {
+  visibility: visible;
 }
