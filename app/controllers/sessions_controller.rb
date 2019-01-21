@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
 
   def login
+    reset_session
   end
 
   def create
