@@ -6,6 +6,7 @@
     <h1 class="center"><%=@post.name.upcase%> &nbsp
       <%if session[:user_id] == @post.user.id%>
       <a class="post-icon" href="<%= edit_post_path(@post.id) %>">
+        <span class="tooltiptext">Edit Post</span>
         <img src="/assets/edit.png">
       </a>
       <%end%>
@@ -19,9 +20,9 @@
     <% tags = @post.tags.split(" ").each do |tag| %>
     <% t = tag.sub('#','') %>
     <a href="/?search=%23<%= t %>&submit=Search"><%=tag%></a>
-    <% end %>
+    <% end %> <br>
     <% unless session[:user_id] == @post.user.id %>
-    <%= link_to("Contact", user_chats_path(current_user, :other_user => @post.user.id, :post => @post.id), method: :post) %>
+    <%= link_to("Contact Seller", user_chats_path(current_user, :other_user => @post.user.id, :post => @post.id), method: :post) %>
     <% end %>
   </div>
 </div>

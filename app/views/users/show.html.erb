@@ -10,17 +10,20 @@
     <p>Email: <strong><%= @user.email%></strong></p>
     <p>Created Posts: <strong><%= @user.posts.count%></strong></p>
     <a class="icon" href="<%= edit_user_path %>">
+      <span class="tooltiptext">Edit Profile</span>
       <img src="/assets/edit.png">
     </a> &nbsp &nbsp
     <a class="icon" href="<%= new_post_path %>">
+      <span class="tooltiptext">Create New Post</span>
       <img src="/assets/add.png">
     </a> &nbsp &nbsp
     <%= link_to user_path, remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: 'icon' do %>
+    <span class="tooltiptext">Delete Account</span>
     <%= image_tag("/assets/delete.png") %>
     <% end %>
     <br> <br>
     <%if @user.premium? == false %>
-    <a class="btn btn-primary" href="<%=new_charge_path%>">Go Premium</a>
+    <a class="btn btn-secondary" href="<%=new_charge_path%>">Go Premium</a>
     <%else%>
     <h2>Premium Member</h2>
     <%end%>

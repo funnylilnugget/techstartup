@@ -1,6 +1,6 @@
 <body id="accountbg">
 <div class="account">
-  <div class="animate-up center">
+  <div class="slidein-right center">
     <h1> Sign Up</h1>
 
     <%= form_for(@user) do |u|%>
@@ -27,11 +27,14 @@
     <% end %>
 
   </div>
-  <div class="animate-down">
+  <div class="slidein-left center">
 
-    <h1 class="half-toppadding center">Community Chest</h1>
+    <h1 id="paddingtopqtr">
+      <img src="/assets/tc2.png"> <br>
+      Community Chest
+    </h1>
 
-    <h2 class="center">Something Something</h2>
+    <h3>Already have an account</h3>
 
     <p class="center">
       <%=link_to 'Sign In', login_path, class: "btn btn-secondary"%>

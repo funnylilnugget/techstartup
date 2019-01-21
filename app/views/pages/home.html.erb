@@ -1,5 +1,6 @@
-<h1 class="center">Latest Post</h1>
 <%posts = Post.all%>
+<%if posts.exists? %>
+<h1 class="center">Latest Post</h1>
 
 <%posts.reverse.each do |post|%>
 
@@ -70,10 +71,15 @@
         <strong>Location:</strong> <%=post.user.location.name%>
       </p>
       <p>
+        <% unless session[:user_id] == post.user.id %>
         <%= link_to("Contact Seller", user_chats_path(current_user, :other_user => post.user.id, :post => post.id), method: :post, class: "btn btn-primary") %>
+        <% end %>
       </p>
     </div>
   </div>
 </div>
 <% end %>
+<% end %>
+<%else%>
+<h1 class="center">There are no posts at this time</h1>
 <% end %>
