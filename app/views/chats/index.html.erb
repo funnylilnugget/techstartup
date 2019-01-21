@@ -5,13 +5,13 @@
     <% @other_user = other_user%>
     <% end %>
     <% end %>
+    <h3>Active Messages With:</h3>
     <ul>
         <% @chats.uniq.each do |chat|%>
-        <h3>Active Messages With:</h3>
         <li>
         <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
         <%if chat.post != nil%>
-        <%="Message from: #{@other_user.username} regarding #{chat.post.name}" %>
+        <%="Username: #{@other_user.username} -- Subject: #{chat.post.name}" %>
         <% end %>
       </li>
       <% end %>

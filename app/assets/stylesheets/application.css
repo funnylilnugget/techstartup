@@ -529,6 +529,18 @@ transform-origin: 0% 0%;
   color: #f2b632;
 }
 
+.message-board > ul {
+  list-style: none;
+}
+
+.message-board > ul > li {
+  border-radius: .4em;
+  border: 1px solid #252839;
+  /* padding-bottom: 2%; */
+  padding-left: 2%;
+  margin-bottom: 3%;
+}
+
 .bubble {
   position: relative;
 	border-radius: .4em;
