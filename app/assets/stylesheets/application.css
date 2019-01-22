@@ -595,7 +595,7 @@ transform-origin: 0% 0%;
 .premium {
   display: grid;
   width: 100%;
-  grid-template: 300px / 20% 30% 30% 20%;
+  grid-template: 250px / 10% 30% 30% 10%;
   justify-content: center;
   grid-gap: 5%;
   cursor: pointer;
@@ -623,9 +623,44 @@ transform-origin: 0% 0%;
 }
 
 .premium div:nth-child(3):hover {
-  height: 100%;
   transform: scale(1.1, 1.1);
   box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+  background-color: #ebebeb;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+}
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 

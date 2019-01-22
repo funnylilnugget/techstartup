@@ -14,37 +14,47 @@
     <h3><strong>$<%=@total.round(2)%></strong>/year</h3>
     <p>See unlimited posts per day</p>
     <a class="btn btn-secondary" onclick="showBtn()">Get Premium</a>
-
-  <div id="stripe-btn" class="hidden">
-    <article>
-      <% if flash[:error].present? %>
-        <div id="error_explanation">
-          <p><%= flash[:error] %></p>
-        </div>
-      <% end %>
-      <br>
-      <label class="amount">
-        <span>Membership: $<%=sprintf('%.2f', @amount_dollar)%></span> <br>
-        <span>Tax: $<%=@tax.round(2)%></span> <br>
-        <span>Total: $<%=@total.round(2)%></span> <br>
-      </label>
-    </article>
-
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="Forever Premium Subscription"
-            data-amount="545"
-            data-locale="auto">
-    </script>
-    <script>
-      function showBtn() {
-        var btn = document.getElementById("stripe-btn");
-        btn.classList.remove("hidden");
-      }
-    </script>
-  </div>
-
   </div>
   <div></div>
 </div>
+
+<div id="stripe-btn" class="hidden modal">
+<div class="modal-content center">
+  <span class="close">&times;</span>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <br>
+    <label class="amount">
+      <span>Membership: $<%=sprintf('%.2f', @amount_dollar)%></span> <br>
+      <span>Tax: $<%=@tax.round(2)%></span> <br>
+      <span>Total: $<%=@total.round(2)%></span> <br>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Forever Premium Subscription"
+          data-amount="545"
+          data-locale="auto">
+  </script>
+</div>
+</div>
 <% end %>
+
+<script>
+function showBtn() {
+  var btn = document.getElementById("stripe-btn");
+  var modal = document.getElementById('stripe-btn');
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.style.display = "block";
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+}
+</script>
