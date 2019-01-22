@@ -7,6 +7,7 @@
       <% end %>
     <% end %>
 
+    <% if @chats.count < 1 %>
     <% @chats.uniq.each do |chat|%>
       <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
         <%if chat.post != nil%>
@@ -17,5 +18,8 @@
           <% end %>
         <% end %>
       <% end %>
+      <%else%>
+      <h1>No messages at this time </h1>
+    <% end %>
     <% end %>
 </div>
