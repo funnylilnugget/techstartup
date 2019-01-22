@@ -37,12 +37,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
       if @post.update(post_edit_params)
         set_timer(@post)
-      flash[:notice] = "Post Updated"
-      redirect_to @post
-    else
-      render 'new'
-      puts "#{@post.errors.messages}"
-    end
+        flash[:notice] = "Post Updated"
+        redirect_to @post
+      else
+        render 'new'
+        puts "#{@post.errors.messages}"
+      end
   end
 
 
@@ -61,14 +61,14 @@ end
   end
 
   def post_edit_params
-    params.require(:post).permit(:status, :name, :description, :category_id, :tags, :premium, :picture)
+    params.require(:post).permit(:status, :name, :description, :category_id, :tags, :picture)
   end
 
   def set_timer(post)
-    if post.changed.include?("status")
-      if post.status = "closed"
-      post.date_completed = Date.today
-      end
+    if post.status == "Closed"
+      post.update(date_completed: Date.today)
+    else
+      post.update(date_completed: nil)
     end
   end
 
