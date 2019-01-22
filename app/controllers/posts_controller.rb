@@ -23,6 +23,7 @@ class PostsController < ApplicationController
       redirect_to @user
     else
       puts @post.errors.messages
+      flash[:notice] = "#{@post.errors.messages}"
       render 'new'
     end
   end
