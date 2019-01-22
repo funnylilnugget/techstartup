@@ -1,11 +1,12 @@
 <div class="message-board">
+  <h2 class="center"> Messages</h2>
 <% if @existing_chats_users %>
   <% @existing_chats_users.each do |other_user| %>
     <% if other_user != current_user %>
       <% @other_user = other_user%>
       <% end %>
     <% end %>
-  
+
     <% @chats.uniq.each do |chat|%>
       <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
         <%if chat.post != nil%>
