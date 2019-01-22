@@ -1,10 +1,8 @@
-<%posts = Post.all%>
 <%user = User.find(session[:user_id])%>
 <%if user.premium? == true %>
-<%if posts.exists? %>
+<%if @posts.exists? %>
 <h1 class="center">Latest Post</h1>
-
-<%@posts.each do |post|%>
+<%@posts.take(1000).each do |post|%>
 
 <% if params["search"] == nil %>
 
@@ -91,10 +89,10 @@
 <!-- else for premium -->
 <%else%>
 
-<%if posts.exists?%>
+<%if @posts.exists?%>
 <h1 class="center">Latest Post</h1>
 
-<%posts.reverse.take(3).each do |post|%>
+<%@posts.reverse.take(3).each do |post|%>
 
 <%unless session[:user_id] == post.user.id %>
 
