@@ -31,21 +31,20 @@
 
 <h1 class="center">Related Posts</h1> <br>
 <div class="related-posts">
-  <%posts = Post.where(category: @post.category_id).take(3).shuffle%>
   <div class="posts-grid">
-    <%posts.reverse.each do |post|%>
-     <%  if post.id != @post.id %>
+    <%@related_posts.reverse.each do |post|%>
+    <%  if post.id != @post.id %>
     <div class="post" id="post-<%=post.id%>">
       <div>
         <a href="<%=post_path(post.id)%>">
-        <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "post-default"): image_tag(post.picture, class: "posts-img")%>
-      </a>
+          <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "post-default"): image_tag(post.picture, class: "posts-img")%>
+        </a>
       </div>
       <div class="description center">
         <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a>
         <p><%=post.description.truncate(100)%> </p>
         <p>
-        <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary"%>
+          <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary"%>
         </p>
       </div>
     </div>
@@ -53,3 +52,4 @@
     <%end%>
   </div>
 </div>
+<%= will_paginate @related_posts, page_links: false%>

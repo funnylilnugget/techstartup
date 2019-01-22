@@ -6,7 +6,11 @@ class LocationsController < ApplicationController
       render 'error'
     else
       users.each do |user|
-        @posts = user.posts
+        if user.posts.count == 0
+          render 'error'
+        else
+          @posts = user.posts
+        end
       end
     end
   end
@@ -17,7 +21,11 @@ class LocationsController < ApplicationController
       render 'error'
     else
       users.each do |user|
-        @posts = user.posts
+        if user.posts.count == 0
+          render 'error'
+        else
+          @posts = user.posts
+        end
       end
     end
   end
@@ -28,7 +36,11 @@ class LocationsController < ApplicationController
       render 'error'
     else
       users.each do |user|
-        @posts = user.posts
+        if user.posts.count == 0
+          render 'error'
+        else
+          @posts = user.posts
+        end
       end
     end
   end
@@ -39,7 +51,11 @@ class LocationsController < ApplicationController
       render 'error'
     else
       users.each do |user|
-        @posts = user.posts
+        if user.posts.count == 0
+          render 'error'
+        else
+          @posts = user.posts
+        end
       end
     end
   end
@@ -50,7 +66,11 @@ class LocationsController < ApplicationController
       render 'error'
     else
       users.each do |user|
-        @posts = user.posts
+        if user.posts.count == 0
+          render 'error'
+        else
+          @posts = user.posts
+        end
       end
     end
   end

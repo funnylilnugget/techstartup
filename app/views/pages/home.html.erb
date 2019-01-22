@@ -4,7 +4,7 @@
 <%if posts.exists? %>
 <h1 class="center">Latest Post</h1>
 
-<%posts.reverse.each do |post|%>
+<%@posts.each do |post|%>
 
 <% if params["search"] == nil %>
 
