@@ -15,8 +15,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @user = User.find(session[:user_id])
+    @post.status = 'open'
     @user.posts << @post
-    # @post.status = 'open'
     if @post.valid?
       @post.save
       flash[:notice] = "Post Created"
