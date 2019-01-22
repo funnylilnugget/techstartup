@@ -16,13 +16,14 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @user = User.find(session[:user_id])
     @user.posts << @post
-    @post.status = 'open'
+    # @post.status = 'open'
     if @post.valid?
       @post.save
       flash[:notice] = "Post Created"
       redirect_to @user
     else
       puts @post.errors.messages
+      flash[:notice] = "#{@post.errors.messages}"
       render 'new'
     end
   end
