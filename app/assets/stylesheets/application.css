@@ -240,6 +240,19 @@ input[type=text], textarea, input[type=email], input[type=password], select{
   color: #F1F1EF;
 }
 
+.btn-status {
+  font-size: 1em;
+  border: 2px solid #FB8122;
+  background-color: #FB8122;
+  color: #F1F1EF;
+}
+
+.btn-status:hover {
+  border: 2px solid #ba5607;
+  background-color: #ba5607;
+  color: #F1F1EF;
+}
+
 /***************** TOP-NAV ****************/
  .topnav-container {
    display: grid;
@@ -554,7 +567,6 @@ transform-origin: 0% 0%;
   position: relative;
 	border-radius: .4em;
   border: 1px solid #252839;
-  /* padding-bottom: 2%; */
   padding-left: 2%;
   margin-bottom: 3%;
 }
@@ -569,13 +581,12 @@ transform-origin: 0% 0%;
 }
 
 #status {
-  border: 3px solid #677077;
   padding: 5px;
   border-right: none;
-  width: 15%;
-  text-align: center;
+  margin-left: 20%;
+  width: 60%;
+  justify-content: center;
   position: relative;
-  margin-left: 84%;
   margin-bottom: 1%;
   animation: shadow-pulse 3s infinite;
 }

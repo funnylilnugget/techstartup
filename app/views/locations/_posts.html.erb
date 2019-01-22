@@ -1,3 +1,5 @@
+<%user = User.find(session[:user_id])%>
+<%if user.premium? == true %>
 <div class="related-posts">
   <div class="posts-grid">
     <%@posts.reverse.each do |post|%>
@@ -26,3 +28,35 @@
 
   </div>
 </div>
+<%else%>
+<div class="related-posts">
+  <div class="posts-grid">
+    <%@posts.reverse.take(3).each do |post|%>
+    <%unless session[:user_id] == post.user.id %>
+
+    <div class="post" id="post-<%=post.id%>">
+      <div>
+        <a href="<%=post_path(post.id)%>">
+        <%=post.picture.attachment.nil? ? content_tag(:div, "", class: "post-default"): image_tag(post.picture, class: "posts-img")%>
+      </a>
+      </div>
+      <div class="description center">
+        <a class="heading" href="<%=post_path(post.id)%>"><%=post.name%></a> <br>
+        <a href="/users/<%= post.user.id %>"><strong><%=post.user.username.capitalize %></strong></a> <br>
+        <p><%=post.description.truncate(100)%></p>
+        <p><%=post.user.location.name%></p>
+        <p><% tags = post.tags.split(" ").each do |tag| %>
+        <% t = tag.sub('#','') %>
+        <a href="/?search=%23<%= t %>&submit=Search"><%=tag%></a>
+        <% end %></p>
+        <p>
+        <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary"%>
+        </p>
+      </div>
+    </div>
+    <%end%>
+    <%end%>
+
+  </div>
+</div>
+<%end%>
