@@ -22,9 +22,9 @@
     <label class="fileupload-pt">Choose File
       <%= post.file_field :picture, direct_upload: true, id: "fileupload"%>
     </label> <br>
-  </div> <br>
-  <p class="center">
-    <%= post.submit "Create Post", class: "btn btn-secondary" %>
-  </p>
+    <p class="center">
+      <%= post.submit "Create Post", class: "btn btn-secondary" %>
+    </p>
+  </div>
   <% end %>
 </div>

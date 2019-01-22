@@ -27,9 +27,9 @@
       Post Status <br>
       <%= post.select :status, ["Open", "In Progress", "Closed"]%>
     </p>
+    <p class="center">
+      <%= post.submit "Save Changes", class: "btn btn-secondary" %>
+    </p>
   </div>
-  <p class="center">
-    <%= post.submit "Save Changes", class: "btn btn-secondary" %>
-  </p>
   <% end %>
 </div>

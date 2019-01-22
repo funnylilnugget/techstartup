@@ -25,6 +25,12 @@ class ChargesController < ApplicationController
     :currency    => 'usd'
   )
 
+  flash[:notice] = "Thank You! You are now a Premium Member"
+  redirect_to user_path(session[:user_id])
+  @user = User.find(session[:user_id])
+    @user.premium = true
+    @user.save
+
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path
