@@ -14,7 +14,10 @@
         <a href="/users/<%= post.user.id %>"><strong><%=post.user.username.capitalize %></strong></a> <br>
         <p><%=post.description.truncate(100)%></p>
         <p><%=post.user.location.name%></p>
-        <p><%=post.tags%></p>
+        <% tags = post.tags.split(" ").each do |tag| %>
+        <% t = tag.sub('#','') %>
+        <a href="/?search=%23<%= t %>&submit=Search"><%=tag%></a>
+        <% end %> <br>
         <p>
         <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary"%>
         </p>
@@ -24,3 +27,4 @@
   </div>
 </div>
 <%end%>
+<%= will_paginate @posts, page_links: false %>
