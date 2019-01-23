@@ -543,6 +543,14 @@ transform-origin: 0% 0%;
   box-shadow: 5px 5px 5px rgba(0,0,0,.3);
 }
 
+.msg-box a {
+  color: #46589e;
+}
+
+.msg-box a:hover {
+  color: #3a4571;
+}
+
 #messages {
   padding: 2%;
   font-size: 1.3em;
@@ -554,7 +562,7 @@ transform-origin: 0% 0%;
 }
 
 .message-board a:hover {
-  color: #f2b632;
+  color: #3a4571;
 }
 
 
@@ -562,6 +570,7 @@ transform-origin: 0% 0%;
   width: 60px;
   height: 60px;
 }
+
 
 .bubble {
   position: relative;
