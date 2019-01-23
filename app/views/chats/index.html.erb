@@ -7,14 +7,13 @@
       <% end %>
     <% end %>
 
-    <% if @chats.count > 1%>
-    <% @chats.uniq.each do |chat|%>
+    <% if @chats.count > 1 %>
+    <% @chats.uniq.reverse.each do |chat|%>
       <%= link_to(user_chats_path(current_user, :other_user => @other_user.id, :post => chat.post.id ), method: :post) do %>
         <%if chat.post != nil%>
-        <p>
           <%=image_tag(@other_user.picture) if @other_user.picture.attached?%>
-          <%= "Message from: #{@other_user.username.capitalize} regarding post: #{chat.post.name}" %>
-        </p>
+          <%= "Message from: #{@other_user.username.capitalize} regarding post: #{chat.post.name}" %> <br> <br>
+          <% end %>
           <% end %>
         <% end %>
       <% end %>
