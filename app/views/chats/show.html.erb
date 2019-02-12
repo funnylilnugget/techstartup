@@ -29,7 +29,7 @@
 
   function checkMessages() {
     messages = document.querySelectorAll('.bubble')
-    if(messages.length >= 4 && <%= @post.user.id%> == <%= session[:user_id]%> && <%= @post.status == 'open'%>) {
+    if(messages.length >= 2 && <%= @post.user.id%> == <%= session[:user_id]%> && <%= @post.status == 'open'%>) {
       changeStatus.classList.remove('hidden')
     }else {
     setInterval(checkMessages(),10000)
